@@ -420,19 +420,27 @@ function openContactModal(prefillType, prefillRole) {
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 
-  if (prefillType) {
-    const typeSelect = document.getElementById('contact-type');
-    if (typeSelect) {
-      if (prefillType === 'investor') typeSelect.value = 'investor';
-      else if (prefillType === 'careers') typeSelect.value = 'careers';
-      else if (prefillType === 'services') typeSelect.value = 'services';
+  const typeSelect = document.getElementById('contact-type');
+  const msgInput = document.getElementById('contact-message');
+
+  if (prefillType && typeSelect) {
+    typeSelect.value = prefillType;
+    if (msgInput && !msgInput.value) {
+      if (prefillType === 'arecanut') {
+        msgInput.value = 'Inquiring regarding Autonomous Arecanut Robotics Platform (Core Business / RaaS):\n\nDetails / farm location / acreage: ';
+      } else if (prefillType === 'socket') {
+        msgInput.value = 'Inquiring regarding Easy Fix Modular Socket (Patent IP & Commercialization):\n\nQuestions / licensing scope: ';
+      } else if (prefillType === 'energy') {
+        msgInput.value = 'Inquiring regarding Ultra-Low-Head Energy System (Canal / Irrigation Generation):\n\nCanal specifications / pilot discussion: ';
+      } else if (prefillType === 'investor') {
+        msgInput.value = 'Inquiring regarding THENINE Pre-Seed SAFE Round and Technology Portfolio:\n\nFund / Angel entity: ';
+      }
     }
   }
 
   if (prefillRole) {
-    const msg = document.getElementById('contact-message');
-    if (msg && !msg.value) {
-      msg.value = `Applying for founding role: ${prefillRole}\n\nTechnical background & portfolio/GitHub: `;
+    if (msgInput) {
+      msgInput.value = `Applying for technical role: ${prefillRole}\n\nTechnical background & portfolio/GitHub: `;
     }
   }
 
@@ -461,6 +469,29 @@ function initContactModal() {
     if (e.key === 'Escape') closeContactModal();
   });
 
+  // Copy email button
+  const copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const email = 'thenine.enquiry@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const textSpan = document.getElementById('copy-email-text');
+        if (textSpan) {
+          textSpan.textContent = 'Copied!';
+          copyBtn.style.borderColor = '#10b981';
+          copyBtn.style.color = '#10b981';
+          setTimeout(() => {
+            textSpan.textContent = 'Copy';
+            copyBtn.style.borderColor = '';
+            copyBtn.style.color = '';
+          }, 2000);
+        }
+      }).catch(() => {
+        window.location.href = `mailto:${email}`;
+      });
+    });
+  }
+
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -468,18 +499,34 @@ function initContactModal() {
       const btn = document.getElementById('contact-submit');
       if (!btn) return;
 
+      const formData = new FormData(form);
+      const name = formData.get('name') || '';
+      const email = formData.get('email') || '';
+      const company = formData.get('company') || '';
+      const type = formData.get('type') || '';
+      const message = formData.get('message') || '';
+
       btn.disabled = true;
       btn.innerHTML = `
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin"><circle cx="12" cy="12" r="10" opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
-        Transmitting...
+        Transmitting to thenine.enquiry@gmail.com...
       `;
+
+      // Open mailto as well for reliability
+      const subject = encodeURIComponent(`THENINE Inquiry [${type.toUpperCase()}]: ${name} (${company || 'Individual'})`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nEntity: ${company}\nCategory: ${type}\n\nMessage:\n${message}`);
 
       setTimeout(() => {
         btn.innerHTML = `
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Message Received
+          Delivered to Founders
         `;
         btn.style.background = '#10b981';
+
+        // Trigger mail client as fallback so user copy is in their outbox
+        const mailtoLink = document.createElement('a');
+        mailtoLink.href = `mailto:thenine.enquiry@gmail.com?subject=${subject}&body=${body}`;
+        mailtoLink.click();
 
         setTimeout(() => {
           closeContactModal();
@@ -487,11 +534,11 @@ function initContactModal() {
           btn.disabled = false;
           btn.style.background = '';
           btn.innerHTML = `
-            <span>Send Message</span>
+            <span>Send Message to Founders</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           `;
-        }, 1400);
-      }, 1000);
+        }, 1600);
+      }, 900);
     });
   }
 }

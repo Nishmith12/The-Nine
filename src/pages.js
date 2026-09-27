@@ -1,8 +1,8 @@
 /**
  * pages.js — Thenine LLP Core Page Templates
- * 1. Investors Page (Thesis, Problem->Approach, 12-Month Roadmap, Founding Team, SAFE Fundraise)
- * 2. Careers Page (Build from zero, Why join early, 5 Founding Technical Roles)
- * 3. Services Page (From idea to prototype to IP, Pinned 4-stage process, Who it's for, Engagement models)
+ * 1. Investors Page (Investment Opportunities, Core Business, Patent Techs, Thesis, Roadmap, 6-Member Team, SAFE)
+ * 2. Careers Page (Join 6-member founding engineering team, Technical Roles)
+ * 3. Services Page (From idea to prototype to IP, 4-stage process, 6+ IPs track record)
  */
 
 // ─── 01. INVESTORS PAGE ──────────────────────────────
@@ -11,7 +11,7 @@ export function renderInvestorsPage() {
     <!-- Investors Hero -->
     <section class="page-hero" id="investors-hero">
       <div class="hero__content">
-        <div class="section-label">THENINE // ROBOTICS</div>
+        <div class="section-label">THENINE // PROPRIETARY TECHNOLOGY PLATFORM</div>
         <div class="hero__headline-container">
           <div class="hero__line-mask">
             <h1 class="hero__line">Robots built for</h1>
@@ -21,248 +21,508 @@ export function renderInvestorsPage() {
           </div>
         </div>
         <p class="hero__description">
-          We're building robotic systems that handle real-world variation instead of relying on fixed, perfectly controlled automation.
+          THENINE is building a portfolio of proprietary technologies under one technology platform — led by our core Agri-Robotics business, with additional patent-backed projects progressing toward commercialization and investment.
         </p>
         <div class="hero__actions">
-          <button class="btn btn--primary" data-open-modal="contact" data-prefill="investor">
-            <span>Investor conversations</span>
+          <a href="#opportunities" class="btn btn--primary">
+            <span>Explore Investment Opportunities</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          <a href="#thesis" class="btn btn--secondary">
-            <span>Our thesis</span>
           </a>
+          <button class="btn btn--secondary" data-open-modal="contact" data-prefill="investor">
+            <span>Contact Founders</span>
+          </button>
         </div>
         <div class="hero__meta">
           <div class="hero__meta-col">
-            <span class="meta-label">FOCUS</span>
-            <span class="meta-value">Adaptive Manipulation</span>
+            <span class="meta-label">CORE BUSINESS</span>
+            <span class="meta-value">Arecanut Agri-Robotics (RaaS)</span>
           </div>
           <div class="hero__meta-col">
-            <span class="meta-label">STAGE</span>
-            <span class="meta-value">Pre-Seed Robotics</span>
+            <span class="meta-label">PROPRIETARY ASSETS</span>
+            <span class="meta-value">6+ IPs Filed | 2+ Articles</span>
           </div>
           <div class="hero__meta-col">
-            <span class="meta-label">INSTRUMENT</span>
-            <span class="meta-value">SAFE Round Open</span>
+            <span class="meta-label">FOUNDING SQUAD</span>
+            <span class="meta-value">6 Team Members</span>
           </div>
         </div>
       </div>
       <div class="hero__scroll-indicator">
         <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        <span>SCROLL TO EXPLORE THESIS</span>
+        <span>SCROLL TO EXPLORE OPPORTUNITIES</span>
       </div>
     </section>
 
-    <!-- 01 / THESIS SECTION -->
-    <section class="investors-thesis-section" id="thesis">
+    <!-- ─── VERIFIED COMPANY METRICS RIBBON ───────────── -->
+    <section class="metrics-ribbon-section">
       <div class="container">
-        <div class="section-label">01 // THESIS</div>
-        <div class="thesis-callout reveal-card">
-          <h2 class="thesis-statement">
-            "Fixed automation works when the world is predictable.<br>
-            We are building robots for when it isn't."
-          </h2>
-          <div class="thesis-body">
-            <p>
-              Traditional industrial automation performs extremely well in highly structured environments where every component arrives at an exact coordinate under controlled lighting.
-            </p>
-            <p style="margin-top: 16px;">
-              However, many of the most valuable real-world physical tasks contain high entropy. Thenine's core thesis is to build robotic systems capable of conquering real-world variation through unified perception, real-time reasoning, and adaptable manipulation.
-            </p>
+        <div class="metrics-ribbon">
+          <div class="metric-pill">
+            <div class="metric-pill__num">6+</div>
+            <div class="metric-pill__info">
+              <span class="metric-pill__label">IPs Filed</span>
+              <span class="metric-pill__sub">Proprietary Inventions</span>
+            </div>
           </div>
-          <div class="variation-factors-grid">
-            <div class="factor-tag">Object Variation & Deformability</div>
-            <div class="factor-tag">Dynamic Lighting & Specularity</div>
-            <div class="factor-tag">Uncertain Physical Geometry</div>
-            <div class="factor-tag">Unpredictable Part Positioning</div>
-            <div class="factor-tag">Dynamic Human Shared Workspaces</div>
+          <div class="metric-divider"></div>
+          <div class="metric-pill">
+            <div class="metric-pill__num">6</div>
+            <div class="metric-pill__info">
+              <span class="metric-pill__label">Team Members</span>
+              <span class="metric-pill__sub">Multidisciplinary Engineering</span>
+            </div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-pill">
+            <div class="metric-pill__num">2+</div>
+            <div class="metric-pill__info">
+              <span class="metric-pill__label">Research Articles</span>
+              <span class="metric-pill__sub">Peer-Reviewed R&D</span>
+            </div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-pill metric-pill--email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div class="metric-pill__info">
+              <span class="metric-pill__label">Official Contact</span>
+              <a href="mailto:thenine.enquiry@gmail.com" class="metric-pill__link">thenine.enquiry@gmail.com</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROBLEM → APPROACH SECTION -->
-    <section class="investors-approach-section" id="approach">
+    <!-- ─── 01. INVESTMENT OPPORTUNITIES SECTION ──────── -->
+    <section class="investors-opportunities-section" id="opportunities">
       <div class="container">
         <div class="section-intro">
-          <div class="section-label">PROBLEM & APPROACH</div>
-          <h2 class="section-headline reveal-heading">Real environments don't repeat perfectly.</h2>
+          <div class="section-label">// INVESTMENT OPPORTUNITIES</div>
+          <h2 class="section-headline reveal-heading">Proprietary technologies under one platform.</h2>
           <p class="section-lead reveal-body">
-            Rigid automation requires hyper-controlled inputs and expensive custom fixtures. Changing products or shifting environments often demands total re-engineering. Thenine reverses this paradigm:
+            THENINE is building a portfolio of proprietary technologies under one technology platform — led by our core Agri-Robotics business, with additional patent-backed projects progressing toward commercialization and investment.
           </p>
         </div>
 
-        <div style="margin-bottom: 24px;">
-          <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--text-white);" class="reveal-heading">
-            "Perception first. Adaptation second. Action third."
-          </h3>
+        <div class="opportunities-grid">
+
+          <!-- 01 — CORE BUSINESS (Flagship Spotlight) -->
+          <article class="opportunity-card opportunity-card--featured reveal-card">
+            <div class="opp-card__glow-border"></div>
+            <div class="opp-card__header">
+              <div class="opp-card__index-wrap">
+                <span class="opp-card__index">01 — CORE BUSINESS</span>
+                <span class="opp-badge opp-badge--core">
+                  <span class="pulse-dot pulse-dot--green"></span>
+                  CORE BUSINESS — IN DEVELOPMENT
+                </span>
+              </div>
+              <span class="opp-card__tag">FLAGSHIP COMMERCIAL PLATFORM</span>
+            </div>
+
+            <div class="opp-card__body">
+              <h3 class="opp-card__title">Autonomous Arecanut Robotics Platform</h3>
+              <p class="opp-card__desc">
+                Our primary business is end-to-end robotic solutions for arecanut farming. We are developing a multifunctional robotic system capable of performing harvesting, spraying, inspection, and other agricultural operations through a Robotics-as-a-Service (RaaS) model.
+              </p>
+
+              <div class="opp-features-grid">
+                <div class="opp-feature-item">
+                  <span class="opp-feature-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </span>
+                  <div>
+                    <strong>Robotics-as-a-Service (RaaS)</strong>
+                    <p>Lowers upfront capital barriers for farmers with pay-per-acre / seasonal subscription economics.</p>
+                  </div>
+                </div>
+
+                <div class="opp-feature-item">
+                  <span class="opp-feature-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24"/></svg>
+                  </span>
+                  <div>
+                    <strong>Precision Harvesting & Reach</strong>
+                    <p>Eliminates dangerous manual tree-climbing with specialized gripping and cutting kinematics.</p>
+                  </div>
+                </div>
+
+                <div class="opp-feature-item">
+                  <span class="opp-feature-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                  </span>
+                  <div>
+                    <strong>Targeted Canopy Spraying</strong>
+                    <p>Autonomous targeted delivery reducing expensive agrochemical usage and human toxicity exposure.</p>
+                  </div>
+                </div>
+
+                <div class="opp-feature-item">
+                  <span class="opp-feature-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  </span>
+                  <div>
+                    <strong>Vision-Guided Crop Inspection</strong>
+                    <p>Multimodal computer vision mapping ripeness stages, disease hotspots, and yield estimations.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="opp-card__footer">
+                <div class="opp-card__specs">
+                  <span class="spec-chip">Status: In Active Field Prototyping</span>
+                  <span class="spec-chip">Model: RaaS Deployment</span>
+                  <span class="spec-chip">Sector: Agri-Tech & Physical Automation</span>
+                </div>
+                <button class="btn btn--primary" data-open-modal="contact" data-prefill="arecanut">
+                  <span>Inquire on Agri-Robotics Platform</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 — PATENT TECHNOLOGY: Easy Fix Modular Socket -->
+          <article class="opportunity-card reveal-card">
+            <div class="opp-card__header">
+              <div class="opp-card__index-wrap">
+                <span class="opp-card__index">02 — PATENT TECHNOLOGY</span>
+                <span class="opp-badge opp-badge--patent">
+                  <span class="pulse-dot pulse-dot--amber"></span>
+                  R&D / PROTOTYPE
+                </span>
+              </div>
+              <span class="opp-card__tag">PATENT-BACKED HARDWARE</span>
+            </div>
+
+            <div class="opp-card__body">
+              <h3 class="opp-card__title">Easy Fix Modular Socket</h3>
+              <p class="opp-card__desc">
+                A modular electrical socket technology designed to simplify installation, replacement, maintenance, and future configuration of electrical connections.
+              </p>
+
+              <ul class="opp-card__bullet-list">
+                <li>
+                  <strong>Tool-Free Modular Installation:</strong>
+                  Snap-in mechanical locking interface allowing effortless replacement without exposed electrical wire handling.
+                </li>
+                <li>
+                  <strong>Simplified Maintenance & Safety:</strong>
+                  Eliminates downtime and shock hazards during commercial and residential electrical socket servicing.
+                </li>
+                <li>
+                  <strong>Future-Proof Upgrades:</strong>
+                  Universal base accommodates smart IoT sensor modules, USB-C Power Delivery, and smart power management.
+                </li>
+                <li>
+                  <strong>Proprietary IP:</strong>
+                  Covered by filed patent applications for mechanical engagement and safety terminal contact structure.
+                </li>
+              </ul>
+
+              <div class="opp-card__footer">
+                <div class="opp-card__specs">
+                  <span class="spec-chip">Stage: Functional Prototype</span>
+                  <span class="spec-chip">IP: Filed Patent</span>
+                </div>
+                <button class="btn btn--secondary btn--full" data-open-modal="contact" data-prefill="socket">
+                  <span>Inquire on Modular Socket</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 — PATENT TECHNOLOGY: Ultra-Low-Head Energy System -->
+          <article class="opportunity-card reveal-card">
+            <div class="opp-card__header">
+              <div class="opp-card__index-wrap">
+                <span class="opp-card__index">03 — PATENT TECHNOLOGY</span>
+                <span class="opp-badge opp-badge--patent">
+                  <span class="pulse-dot pulse-dot--cyan"></span>
+                  PROTOTYPE
+                </span>
+              </div>
+              <span class="opp-card__tag">CLEAN DISTRIBUTED POWER</span>
+            </div>
+
+            <div class="opp-card__body">
+              <h3 class="opp-card__title">Ultra-Low-Head Energy System</h3>
+              <p class="opp-card__desc">
+                An energy-conversion technology designed to generate power from ultra-low-head canal and irrigation systems, targeting distributed energy generation.
+              </p>
+
+              <ul class="opp-card__bullet-list">
+                <li>
+                  <strong>Sub-2m Hydraulic Head Capture:</strong>
+                  Proprietary kinetic runner designed specifically for ultra-low elevation drops where traditional hydro turbines cannot operate.
+                </li>
+                <li>
+                  <strong>Direct Irrigation & Canal Integration:</strong>
+                  Taps into pre-existing agricultural and canal waterways with minimal civil infrastructure and zero damming.
+                </li>
+                <li>
+                  <strong>24/7 Distributed Baseload:</strong>
+                  Produces continuous clean electrical energy to power local microgrids, agricultural pumps, and rural installations.
+                </li>
+                <li>
+                  <strong>Patented IP:</strong>
+                  Covered by filed patent applications protecting hydrodynamic design, debris deflection, and kinetic efficiency.
+                </li>
+              </ul>
+
+              <div class="opp-card__footer">
+                <div class="opp-card__specs">
+                  <span class="spec-chip">Stage: Verified Prototype</span>
+                  <span class="spec-chip">IP: Filed Patent</span>
+                </div>
+                <button class="btn btn--secondary btn--full" data-open-modal="contact" data-prefill="energy">
+                  <span>Inquire on Energy System</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
         </div>
+      </div>
+    </section>
 
-        <div class="approach-steps-grid">
-          <div class="approach-step-card reveal-card">
-            <span class="step-number">STAGE 01</span>
-            <h4 class="step-title">Perceive</h4>
-            <p class="step-desc">
-              Continuously understand objects, spatial geometry, surface characteristics, and environmental variance with multimodal 3D vision and tactile feedback.
+    <!-- 02 / THESIS SECTION -->
+    <section class="investors-thesis-section" id="thesis">
+      <div class="container">
+        <div class="section-label">02 // THESIS</div>
+        <div class="thesis-callout reveal-card">
+          <h2 class="thesis-statement">
+            "Fixed automation works when the world is predictable.<br>
+            We are building robotics & patented technologies for when it isn't."
+          </h2>
+          <div class="thesis-body">
+            <p>
+              Traditional industrial automation requires hyper-controlled environments where every component arrives at an exact coordinate under sterile lighting. High-value agricultural tasks — such as arecanut harvesting and tree operations — feature high biological entropy, variable heights, and unpredictable weather.
+            </p>
+            <p style="margin-top: 16px;">
+              THENINE solves this through a unified physical platform: adaptive perception, resilient mechanical mechanisms, and field-tested hardware. Concurrently, our engineering pipeline incubates patent-protected hardware innovations that address systemic infrastructure needs.
             </p>
           </div>
-
-          <div class="approach-step-card reveal-card">
-            <span class="step-number">STAGE 02</span>
-            <h4 class="step-title">Reason</h4>
-            <p class="step-desc">
-              Synthesize real-time situational dynamics to determine how the kinematic mechanism should interact with non-standard situations and unpredictable part shifts.
-            </p>
-          </div>
-
-          <div class="approach-step-card reveal-card">
-            <span class="step-number">STAGE 03</span>
-            <h4 class="step-title">Act</h4>
-            <p class="step-desc">
-              Execute micro-second closed-loop robotic motion with compliant force control, eliminating catastrophic jams and physical tool collisions.
-            </p>
-          </div>
-
-          <div class="approach-step-card reveal-card">
-            <span class="step-number">STAGE 04</span>
-            <h4 class="step-title">Learn / Iterate</h4>
-            <p class="step-desc">
-              Continuously log physical edge-case telemetry to improve system robustness and generalize adaptation across future variations.
-            </p>
+          <div class="variation-factors-grid">
+            <div class="factor-tag">Biological & Canopy Variation</div>
+            <div class="factor-tag">Dynamic Outdoor Lighting</div>
+            <div class="factor-tag">Non-Standard Agricultural Geometry</div>
+            <div class="factor-tag">Ultra-Low-Head Fluid Dynamics</div>
+            <div class="factor-tag">Modular Touch-Safe Electrical Architecture</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 02 / 12-MONTH ROADMAP -->
+    <!-- 03 / 12-MONTH ROADMAP -->
     <section class="investors-roadmap-section" id="roadmap">
       <div class="container">
         <div class="section-intro">
-          <div class="section-label">02 // ROADMAP</div>
+          <div class="section-label">03 // ROADMAP</div>
           <h2 class="section-headline reveal-heading">The next 12 months.</h2>
           <p class="section-lead reveal-body">
-            A disciplined, forward-looking engineering trajectory engineered to systematically derisk physical manipulation and validate commercial utility.
+            A disciplined engineering trajectory to derisk our core Agri-Robotics platform and advance patent technologies toward commercial deployment.
           </p>
         </div>
 
         <div class="roadmap-timeline">
           <div class="roadmap-card reveal-card">
             <span class="roadmap-timeframe">0 – 3 MONTHS</span>
-            <h4 class="roadmap-phase-title">Core Platform</h4>
+            <h4 class="roadmap-phase-title">Field Testbed & Sensor Stack</h4>
             <ul class="roadmap-deliverables">
-              <li>Initial robotics architecture</li>
-              <li>Perception & depth sensor stack</li>
-              <li>First manipulation experiments</li>
-              <li>Prototype hardware testbed</li>
+              <li>Refine arecanut climbing & gripping actuation</li>
+              <li>Integrated multimodal depth sensor & canopy camera</li>
+              <li>Bench validation for Easy Fix Socket contact cycling</li>
+              <li>Scale 6+ IP filing defense & publication milestones</li>
             </ul>
           </div>
 
           <div class="roadmap-card reveal-card">
             <span class="roadmap-timeframe">3 – 6 MONTHS</span>
-            <h4 class="roadmap-phase-title">Integrated Prototype</h4>
+            <h4 class="roadmap-phase-title">Active Field Trials</h4>
             <ul class="roadmap-deliverables">
-              <li>Combine perception and closed-loop motion</li>
-              <li>Autonomous task execution loops</li>
-              <li>Repeated real-world stress testing</li>
-              <li>Kinematic reliability improvements</li>
+              <li>Deploy arecanut robot in commercial plantations</li>
+              <li>Execute automated harvesting & spraying test loops</li>
+              <li>Canal flume hydrodynamic testing of Low-Head energy system</li>
+              <li>Incorporate feedback from agricultural operators</li>
             </ul>
           </div>
 
           <div class="roadmap-card reveal-card">
             <span class="roadmap-timeframe">6 – 9 MONTHS</span>
-            <h4 class="roadmap-phase-title">Real-World Validation</h4>
+            <h4 class="roadmap-phase-title">RaaS Pilot Rollout</h4>
             <ul class="roadmap-deliverables">
-              <li>Deploy into less controlled environments</li>
-              <li>Collect failure edge cases</li>
-              <li>Improve physical adaptability</li>
-              <li>Benchmark system performance metrics</li>
+              <li>Initiate first paid Robotics-as-a-Service (RaaS) contracts</li>
+              <li>Stress-test endurance across hundreds of trees</li>
+              <li>Prototype pilot installations for modular socket in partner sites</li>
+              <li>Publish 2nd peer-reviewed research validation paper</li>
             </ul>
           </div>
 
           <div class="roadmap-card reveal-card">
             <span class="roadmap-timeframe">9 – 12 MONTHS</span>
-            <h4 class="roadmap-phase-title">Demonstration System</h4>
+            <h4 class="roadmap-phase-title">Commercial Demonstration</h4>
             <ul class="roadmap-deliverables">
-              <li>Robust production-ready working prototype</li>
-              <li>Repeatable live technical demo</li>
-              <li>Third-party technical validation</li>
-              <li>Prepare for broader pilots & next round</li>
+              <li>Multi-unit fleet deployment for harvesting & spraying</li>
+              <li>Licensing & production partnerships for Easy Fix Socket</li>
+              <li>Microgrid pilot launch for Ultra-Low-Head system</li>
+              <li>Prepare commercial expansion & institutional seed round</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 03 / FOUNDING TEAM -->
+    <!-- 04 / FOUNDING TEAM & RESEARCH TRACK RECORD -->
     <section class="investors-team-section" id="team">
       <div class="container">
         <div class="section-intro">
-          <div class="section-label">03 // TEAM</div>
-          <h2 class="section-headline reveal-heading">Built by a founding team obsessed with making robots work outside the lab.</h2>
+          <div class="section-label">04 // FOUNDING SQUAD</div>
+          <h2 class="section-headline reveal-heading">6 Team Members driving end-to-end robotics & patented R&D.</h2>
           <p class="section-lead reveal-body">
-            Combining mechanical precision, low-level real-time embedded engineering, and modern adaptive perception.
+            A tight-knit multidisciplinary team of 6 engineers and researchers combining mechanical precision, real-time control, perception, and patent formulation — backed by 6+ filed IPs and 2+ published research articles.
           </p>
         </div>
 
-        <div class="team-grid">
-          <div class="team-card reveal-card">
-            <span class="team-role-badge">FOUNDER // CEO</span>
-            <h3 class="team-name">[Founder Name]</h3>
-            <p class="team-bio">[Short background on robotics leadership, engineering vision, and startup execution]</p>
+        <div class="team-pillars-grid">
+          <div class="team-pillar-card reveal-card">
+            <div class="pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <span class="team-role-badge">CORE PILLAR 01</span>
+            <h3 class="team-name">Robotics Systems & Architecture</h3>
+            <p class="team-bio">
+              Orchestrating end-to-end mechatronics, system integration, and autonomous field operational loops for the Arecanut platform.
+            </p>
+            <div class="team-tags">
+              <span>Agri-Robotics</span><span>Systems Design</span><span>RaaS Ops</span>
+            </div>
           </div>
 
-          <div class="team-card reveal-card">
-            <span class="team-role-badge">FOUNDER // CTO</span>
-            <h3 class="team-name">[Founder Name]</h3>
-            <p class="team-bio">[Short background on kinematic design, embedded control systems, and autonomous architecture]</p>
+          <div class="team-pillar-card reveal-card">
+            <div class="pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <span class="team-role-badge">CORE PILLAR 02</span>
+            <h3 class="team-name">Mechanical CAD & Kinematics</h3>
+            <p class="team-bio">
+              Designing tree-climbing gripping mechanisms, harvesting end-effectors, modular socket snap geometries, and lightweight chassis.
+            </p>
+            <div class="team-tags">
+              <span>Kinematics</span><span>CAD / FEA</span><span>End-Effectors</span>
+            </div>
+          </div>
+
+          <div class="team-pillar-card reveal-card">
+            <div class="pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <span class="team-role-badge">CORE PILLAR 03</span>
+            <h3 class="team-name">Embedded Firmware & Controls</h3>
+            <p class="team-bio">
+              Developing real-time motor actuation, closed-loop sensor telemetry, wireless remote monitoring, and power management electronics.
+            </p>
+            <div class="team-tags">
+              <span>Embedded C++</span><span>BLDC Drivers</span><span>Real-Time Telemetry</span>
+            </div>
+          </div>
+
+          <div class="team-pillar-card reveal-card">
+            <div class="pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <span class="team-role-badge">CORE PILLAR 04</span>
+            <h3 class="team-name">Perception & Computer Vision</h3>
+            <p class="team-bio">
+              Building vision pipelines for canopy depth estimation, bunch ripeness segmentation, and precision targeting in outdoor agricultural light.
+            </p>
+            <div class="team-tags">
+              <span>Edge Vision</span><span>Depth Mapping</span><span>Ripeness AI</span>
+            </div>
+          </div>
+
+          <div class="team-pillar-card reveal-card">
+            <div class="pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/></svg>
+            </div>
+            <span class="team-role-badge">CORE PILLAR 05</span>
+            <h3 class="team-name">Fluid & Power Systems Engineering</h3>
+            <p class="team-bio">
+              Engineering the Ultra-Low-Head hydrodynamic kinetic runners, flow channel dynamics, and clean energy power generation interfaces.
+            </p>
+            <div class="team-tags">
+              <span>Hydrodynamics</span><span>Clean Energy</span><span>Canal Power</span>
+            </div>
+          </div>
+
+          <div class="team-pillar-card reveal-card">
+            <div class="pillar-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <span class="team-role-badge">CORE PILLAR 06</span>
+            <h3 class="team-name">Patent Strategy & Technical R&D</h3>
+            <p class="team-bio">
+              Leading technical invention disclosures, patent claims drafting, 6+ filed IP prosecutions, and authoring peer-reviewed research publications.
+            </p>
+            <div class="team-tags">
+              <span>6+ Filed IPs</span><span>2+ Articles</span><span>IP Defense</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 04 / FUNDRAISE SECTION -->
+    <!-- 05 / SAFE FUNDRAISE SECTION -->
     <section class="investors-fundraise-section" id="fundraise">
       <div class="container">
-        <div class="section-label">04 // FUNDRAISE</div>
+        <div class="section-label">05 // FUNDRAISE</div>
         <div class="fundraise-panel reveal-card">
           <div class="fundraise-stats">
             <div>
               <h3 style="font-family: var(--font-display); font-size: 2rem; color: var(--text-white); margin-bottom: 8px;">
-                Building the first version of Thenine.
+                Accelerating Thenine's Technology Platform.
               </h3>
-              <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                Raising pre-seed capital to assemble our founding technical quintet and accelerate physical prototype validation.
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                Raising pre-seed capital under a standard SAFE to scale field trials of our Autonomous Arecanut Robotics platform and fast-track the commercialization of our patent portfolio.
               </p>
             </div>
             <div class="fundraise-stat-item">
               <span class="stat-key">INSTRUMENT</span>
-              <span class="stat-val">SAFE</span>
+              <span class="stat-val">SAFE Round</span>
             </div>
             <div class="fundraise-stat-item">
-              <span class="stat-key">TARGET RAISE</span>
-              <span class="stat-val">[INSERT FUNDRAISING AMOUNT]</span>
+              <span class="stat-key">CORE VEHICLE</span>
+              <span class="stat-val">Agri-Robotics RaaS</span>
             </div>
             <div class="fundraise-stat-item">
-              <span class="stat-key">PROJECTED RUNWAY</span>
-              <span class="stat-val">[INSERT RUNWAY] MONTHS</span>
+              <span class="stat-key">IP PIPELINE</span>
+              <span class="stat-val">6+ Filed Patents</span>
+            </div>
+            <div class="fundraise-stat-item">
+              <span class="stat-key">DIRECT INQUIRIES</span>
+              <span class="stat-val" style="font-size: 0.95rem; word-break: break-all;">thenine.enquiry@gmail.com</span>
             </div>
           </div>
 
           <div>
-            <h4 class="fundraise-breakdown-title">Planned Use of Funds:</h4>
+            <h4 class="fundraise-breakdown-title">Planned Allocation of Pre-Seed Capital:</h4>
             <ul class="fundraise-use-list">
-              <li>Founding engineering team salaries & key technical equity</li>
-              <li>Robotics hardware, precision actuators & sensors</li>
-              <li>Compute, simulation clusters & development infrastructure</li>
-              <li>Prototype manufacturing & rapid CNC/titanium machining</li>
-              <li>Rigorous testing, calibration & failure-case iteration</li>
-              <li>Core technical IP documentation & legal filing costs</li>
+              <li>Field robotics hardware iterations, BLDC motors, sensors & actuators</li>
+              <li>Extended multi-acre farm trials for arecanut harvesting and spraying</li>
+              <li>Production tooling & compliance certification for Easy Fix Modular Socket</li>
+              <li>Canal deployment testbed for Ultra-Low-Head Energy System</li>
+              <li>Continued prosecution and defense of our portfolio of 6+ filed patents</li>
+              <li>Core 6-member engineering team retention and key additions</li>
             </ul>
-            <div style="margin-top: 36px;">
+            <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 12px;">
               <button class="btn btn--primary btn--full" data-open-modal="contact" data-prefill="investor">
                 <span>Request Investor Briefing</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
+              <a href="mailto:thenine.enquiry@gmail.com?subject=THENINE%20Investor%20Inquiry" class="btn btn--secondary btn--full" style="text-align: center; justify-content: center;">
+                <span>Email Founders: thenine.enquiry@gmail.com</span>
+              </a>
             </div>
           </div>
         </div>
@@ -273,17 +533,22 @@ export function renderInvestorsPage() {
     <section class="cinematic-cta-section">
       <div class="cta-radial-glow"></div>
       <div class="container cta-container">
-        <div class="section-label">// CONNECT</div>
+        <div class="section-label">// CONNECT WITH FOUNDERS</div>
         <h2 class="cta-headline">
-          "If you're investing in the next generation of real-world robotics, we'd like to talk."
+          "Partner with THENINE on the next frontier of real-world robotics & clean innovation."
         </h2>
         <p class="cta-subtext">
-          Investor introductions and conversations are welcome. Direct dialogue with our founding team.
+          Direct dialogue with our 6-member engineering squad. Accredited investor introductions, RaaS deployment partners, and IP licensing inquiries are welcome.
         </p>
-        <button class="btn btn--primary btn--large" data-open-modal="contact" data-prefill="investor">
-          <span>Contact Thenine</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn--primary btn--large" data-open-modal="contact" data-prefill="investor">
+            <span>Contact Thenine</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <a href="mailto:thenine.enquiry@gmail.com" class="btn btn--secondary btn--large">
+            <span>thenine.enquiry@gmail.com</span>
+          </a>
+        </div>
       </div>
     </section>
   `;
@@ -295,45 +560,45 @@ export function renderCareersPage() {
     <!-- Careers Hero -->
     <section class="page-hero" id="careers-hero">
       <div class="hero__content">
-        <div class="section-label">JOIN THENINE</div>
+        <div class="section-label">JOIN THENINE // 6-MEMBER FOUNDING TEAM</div>
         <div class="hero__headline-container">
           <div class="hero__line-mask">
-            <h1 class="hero__line">Build robots</h1>
+            <h1 class="hero__line">Build the machine</h1>
           </div>
           <div class="hero__line-mask">
-            <h1 class="hero__line hero__line--accent">from zero.</h1>
+            <h1 class="hero__line hero__line--accent">from the ground up.</h1>
           </div>
         </div>
         <p class="hero__description">
-          Join the founding engineering team building robotic systems designed for real-world uncertainty. We are hiring our core technical group of 5 engineers.
+          Join our multidisciplinary engineering team building real-world agricultural robots and patented energy & hardware systems. Work directly on physical prototypes tested outside the lab.
         </p>
         <div class="hero__actions">
           <a href="#open-roles" class="btn btn--primary">
-            <span>See open roles</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            <span>View 5 Technical Openings</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
           <button class="btn btn--secondary" data-open-modal="contact" data-prefill="careers">
-            <span>General application</span>
+            <span>Pitch Your Skills</span>
           </button>
         </div>
         <div class="hero__meta">
           <div class="hero__meta-col">
-            <span class="meta-label">TEAM SIZE</span>
-            <span class="meta-value">First 5 Engineers</span>
+            <span class="meta-label">CURRENT TEAM</span>
+            <span class="meta-value">6 Core Members</span>
           </div>
           <div class="hero__meta-col">
-            <span class="meta-label">EQUITY</span>
-            <span class="meta-value">Founding Grants</span>
+            <span class="meta-label">PORTFOLIO</span>
+            <span class="meta-value">Agri-Robotics & 6+ IPs</span>
           </div>
           <div class="hero__meta-col">
-            <span class="meta-label">CULTURE</span>
-            <span class="meta-value">High Agency & Math Rigor</span>
+            <span class="meta-label">LOCATION</span>
+            <span class="meta-value">On-Site Lab & Fields</span>
           </div>
         </div>
       </div>
       <div class="hero__scroll-indicator">
         <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        <span>SCROLL TO OPEN ROLES</span>
+        <span>SCROLL TO EXPLORE ROLES</span>
       </div>
     </section>
 
@@ -342,98 +607,71 @@ export function renderCareersPage() {
       <div class="container">
         <div class="section-intro">
           <div class="section-label">WHY JOIN EARLY</div>
-          <h2 class="section-headline reveal-heading">
-            Not employee #200.<br>One of the people who defines the system.
-          </h2>
+          <h2 class="section-headline reveal-heading">The advantage of joining at pre-seed.</h2>
           <p class="section-lead reveal-body">
-            At Thenine, you aren't maintaining legacy code or polishing minor sub-features. You are making the architectural choices that will define physical machines for the next decade.
+            You won't be managing layers of bureaucracy or maintaining legacy codebases. You will design, build, test, and ship physical machines that interact with the real world.
           </p>
         </div>
 
-        <div class="why-early-grid">
-          <div class="why-early-card reveal-card">
-            <span class="why-card-icon">01 //</span>
-            <h4 class="why-card-title">Day-One Architectural Influence</h4>
-            <p class="why-card-desc">
-              Make foundational decisions on real-time operating systems, motor control loops, and multimodal perception stacks from a clean sheet.
+        <div class="why-grid">
+          <div class="why-card reveal-card">
+            <span class="why-number">01</span>
+            <h4 class="why-title">True Hardware Ownership</h4>
+            <p class="why-desc">
+              Own complete subsystems from first sketch in CAD to machining, PCB assembly, firmware, field testing, and patent filing.
             </p>
           </div>
 
-          <div class="why-early-card reveal-card">
-            <span class="why-card-icon">02 //</span>
-            <h4 class="why-card-title">Cross Hardware-Software Boundaries</h4>
-            <p class="why-card-desc">
-              We reject rigid functional silos. Software engineers test on physical dynos; mechanical designers write Python kinematics analyzers.
+          <div class="why-card reveal-card">
+            <span class="why-number">02</span>
+            <h4 class="why-title">High-Impact Equity & Growth</h4>
+            <p class="why-desc">
+              Join during the foundational phase of our technology platform alongside 6 dedicated technical colleagues with generous founding equity.
             </p>
           </div>
 
-          <div class="why-early-card reveal-card">
-            <span class="why-card-icon">03 //</span>
-            <h4 class="why-card-title">Rapid Physical Prototyping</h4>
-            <p class="why-card-desc">
-              Tight feedback loops. Ideas formulated in the morning are simulated at noon and machining on CNC or 3D titanium by evening.
-            </p>
-          </div>
-
-          <div class="why-early-card reveal-card">
-            <span class="why-card-icon">04 //</span>
-            <h4 class="why-card-title">Foundational Technical Ownership</h4>
-            <p class="why-card-desc">
-              Own complete subsystems end-to-end. Your algorithms and kinematics directly control multi-axis physical actuators.
-            </p>
-          </div>
-
-          <div class="why-early-card reveal-card">
-            <span class="why-card-icon">05 //</span>
-            <h4 class="why-card-title">Simulation to Physical Reality</h4>
-            <p class="why-card-desc">
-              Experience the profound satisfaction of watching simulated neural policies deploy on heavy steel, moving real payloads.
-            </p>
-          </div>
-
-          <div class="why-early-card reveal-card">
-            <span class="why-card-icon">06 //</span>
-            <h4 class="why-card-title">Shape Engineering Culture</h4>
-            <p class="why-card-desc">
-              Define the standards of rigor, intellectual honesty, and speed that will guide Thenine as the company scales.
+          <div class="why-card reveal-card">
+            <span class="why-number">03</span>
+            <h4 class="why-title">Real Field Validation</h4>
+            <p class="why-desc">
+              Our robots deploy directly into real commercial farms, canals, and test facilities. Instant feedback from real physics, not synthetic simulations.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5 OPEN ROLES -->
+    <!-- 5 TECHNICAL ROLES -->
     <section class="careers-roles-section" id="open-roles">
       <div class="container">
         <div class="section-intro">
-          <div class="section-label">OPEN TECHNICAL ROLES</div>
-          <h2 class="section-headline reveal-heading">Founding Technical Quintet.</h2>
+          <div class="section-label">CURRENT OPENINGS</div>
+          <h2 class="section-headline reveal-heading">5 Technical roles to expand our team.</h2>
           <p class="section-lead reveal-body">
-            Five critical disciplines needed to build machines that master real-world variation.
+            We are looking for builders who love physical engineering, low-level firmware, perception, and patent-grade problem solving.
           </p>
         </div>
 
-        <div class="roles-stack">
+        <div class="roles-list">
           <!-- Role 01 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 01 // SOFTWARE</span>
-              <h3 class="role-name">Robotics Software Engineer</h3>
+              <span class="role-number">ROLE 01 // MECHATRONICS</span>
+              <h3 class="role-name">Robotics Systems Engineer</h3>
             </div>
             <div>
               <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px;">
-                Design robot control algorithms, motion planners, real-time ROS2/Rust integration, and distributed kinematic systems.
+                Lead mechatronic system integration for the Autonomous Arecanut platform, bridging tree-climbing actuators, power systems, and fail-safe field operations.
               </p>
               <div class="role-focus-tags">
-                <span class="role-tag">Robot Control</span>
-                <span class="role-tag">Motion Planning</span>
-                <span class="role-tag">ROS / ROS2</span>
-                <span class="role-tag">Systems Integration</span>
-                <span class="role-tag">Real-Time Linux</span>
+                <span class="role-tag">Mechatronics</span>
+                <span class="role-tag">Agri-Robotics</span>
+                <span class="role-tag">System Integration</span>
+                <span class="role-tag">Actuators</span>
               </div>
             </div>
             <div class="role-apply-btn">
-              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="Robotics Software Engineer">
+              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="Robotics Systems Engineer">
                 Apply Role →
               </button>
             </div>
@@ -442,23 +680,22 @@ export function renderCareersPage() {
           <!-- Role 02 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 02 // PERCEPTION</span>
-              <h3 class="role-name">Perception / Computer Vision Engineer</h3>
+              <span class="role-number">ROLE 02 // EMBEDDED</span>
+              <h3 class="role-name">Firmware & Motor Control Engineer</h3>
             </div>
             <div>
               <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px;">
-                Develop 3D neural voxel point cloud processing, real-time pose estimation, depth sensing pipelines, and multimodal sensor fusion.
+                Develop ultra-reliable real-time motor control loops, FOC algorithms, CAN-bus communication, and battery telemetry for outdoor field robots.
               </p>
               <div class="role-focus-tags">
-                <span class="role-tag">Object Detection</span>
-                <span class="role-tag">Pose Estimation</span>
-                <span class="role-tag">Depth Sensing</span>
-                <span class="role-tag">Point Clouds</span>
-                <span class="role-tag">Sensor Fusion</span>
+                <span class="role-tag">Embedded C/C++</span>
+                <span class="role-tag">BLDC / FOC</span>
+                <span class="role-tag">CAN-bus</span>
+                <span class="role-tag">STM32 / ESP32</span>
               </div>
             </div>
             <div class="role-apply-btn">
-              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="Perception / CV Engineer">
+              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="Firmware & Motor Control Engineer">
                 Apply Role →
               </button>
             </div>
@@ -467,23 +704,22 @@ export function renderCareersPage() {
           <!-- Role 03 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 03 // FIRMWARE</span>
-              <h3 class="role-name">Embedded / Firmware Engineer</h3>
+              <span class="role-number">ROLE 03 // VISION & AI</span>
+              <h3 class="role-name">Computer Vision Engineer</h3>
             </div>
             <div>
               <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px;">
-                Author micro-second motor control loops, custom board bring-up, fieldbus communications (CAN/EtherCAT), and sensor interfaces.
+                Implement edge vision models for agricultural canopy detection, arecanut bunch ripeness segmentation, and visual servoing for robotic harvesting arms.
               </p>
               <div class="role-focus-tags">
-                <span class="role-tag">Microcontrollers</span>
-                <span class="role-tag">Motor Control (FOC)</span>
-                <span class="role-tag">Sensors & IMUs</span>
-                <span class="role-tag">Communications</span>
-                <span class="role-tag">Real-Time Systems</span>
+                <span class="role-tag">OpenCV / PyTorch</span>
+                <span class="role-tag">Edge AI</span>
+                <span class="role-tag">Depth Perception</span>
+                <span class="role-tag">Visual Servoing</span>
               </div>
             </div>
             <div class="role-apply-btn">
-              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="Embedded / Firmware Engineer">
+              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="Computer Vision Engineer">
                 Apply Role →
               </button>
             </div>
@@ -497,14 +733,13 @@ export function renderCareersPage() {
             </div>
             <div>
               <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px;">
-                Spearhead CAD topology optimization, precision gearboxes, compliant end-effectors, actuator sizing, and rapid prototyping.
+                Spearhead mechanical design of tree-gripping mechanisms, harvesting cutters, and modular electrical hardware for our patent pipeline.
               </p>
               <div class="role-focus-tags">
-                <span class="role-tag">CAD & FEA</span>
-                <span class="role-tag">Mechanisms</span>
-                <span class="role-tag">Actuators</span>
-                <span class="role-tag">End-Effectors</span>
-                <span class="role-tag">Design-for-Iteration</span>
+                <span class="role-tag">SolidWorks / Fusion</span>
+                <span class="role-tag">Mechanism Design</span>
+                <span class="role-tag">Rapid Prototyping</span>
+                <span class="role-tag">CNC / DFM</span>
               </div>
             </div>
             <div class="role-apply-btn">
@@ -517,23 +752,22 @@ export function renderCareersPage() {
           <!-- Role 05 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 05 // EMBODIED AI</span>
-              <h3 class="role-name">ML Engineer — Robotics</h3>
+              <span class="role-number">ROLE 05 // CLEAN-TECH</span>
+              <h3 class="role-name">Hydro-Kinetic Systems Engineer</h3>
             </div>
             <div>
               <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px;">
-                Train learning-based robotics policies, multimodal models, imitation and reinforcement learning models, and edge inference runtimes.
+                Advance the hydro-kinetic turbine and fluid dynamics modeling for our Ultra-Low-Head Energy System deployed in canal and irrigation channels.
               </p>
               <div class="role-focus-tags">
-                <span class="role-tag">Learning-based Robotics</span>
-                <span class="role-tag">Multimodal Models</span>
-                <span class="role-tag">Imitation / RL</span>
-                <span class="role-tag">Robotics Datasets</span>
-                <span class="role-tag">Inference Pipelines</span>
+                <span class="role-tag">Fluid Dynamics</span>
+                <span class="role-tag">Hydro Turbines</span>
+                <span class="role-tag">Clean Energy</span>
+                <span class="role-tag">Generators</span>
               </div>
             </div>
             <div class="role-apply-btn">
-              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="ML Engineer — Robotics">
+              <button class="btn btn--primary" data-open-modal="contact" data-prefill="careers" data-role="Hydro-Kinetic Systems Engineer">
                 Apply Role →
               </button>
             </div>
@@ -549,7 +783,7 @@ export function renderCareersPage() {
         <div class="section-label">// APPLICATION</div>
         <h2 class="cta-headline">"Help build the machine."</h2>
         <p class="cta-subtext">
-          We care more about what you can build than how polished your résumé looks. Don't see your exact role? Send us what you've built.
+          Send your portfolio, GitHub, or videos of what you've physically built directly to our engineering team at <a href="mailto:thenine.enquiry@gmail.com" style="color: var(--blue-accent);">thenine.enquiry@gmail.com</a>.
         </p>
         <button class="btn btn--primary btn--large" data-open-modal="contact" data-prefill="careers">
           <span>Apply to Thenine</span>
@@ -566,7 +800,7 @@ export function renderServicesPage() {
     <!-- Services Hero -->
     <section class="page-hero" id="services-hero">
       <div class="hero__content">
-        <div class="section-label">THENINE R&D</div>
+        <div class="section-label">THENINE R&D // 6+ IPs FILED</div>
         <div class="hero__headline-container">
           <div class="hero__line-mask">
             <h1 class="hero__line">From robotics idea</h1>
@@ -579,7 +813,7 @@ export function renderServicesPage() {
           </div>
         </div>
         <p class="hero__description">
-          We help startup founders turn robotics concepts into credible working prototypes and protect the resulting technical IP.
+          We help founders and enterprise partners turn ambitious robotics and hardware concepts into validated working prototypes, backed by rigorous technical documentation and patent filings.
         </p>
         <div class="hero__actions">
           <button class="btn btn--primary" data-open-modal="contact" data-prefill="services">
@@ -587,21 +821,21 @@ export function renderServicesPage() {
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
           <a href="#services-process" class="btn btn--secondary">
-            <span>How it works</span>
+            <span>Our 4-Stage Process</span>
           </a>
         </div>
         <div class="hero__meta">
           <div class="hero__meta-col">
-            <span class="meta-label">TARGET CLIENT</span>
-            <span class="meta-value">Visionary Founders</span>
+            <span class="meta-label">TRACK RECORD</span>
+            <span class="meta-value">6+ IPs Filed | 2+ Articles</span>
           </div>
           <div class="hero__meta-col">
-            <span class="meta-label">LIFECYCLE</span>
-            <span class="meta-value">Concept to Filed IP</span>
+            <span class="meta-label">TEAM STRENGTH</span>
+            <span class="meta-value">6 Multidisciplinary Engineers</span>
           </div>
           <div class="hero__meta-col">
-            <span class="meta-label">DELIVERY</span>
-            <span class="meta-value">Turnkey Engineering</span>
+            <span class="meta-label">DIRECT EMAIL</span>
+            <span class="meta-value">thenine.enquiry@gmail.com</span>
           </div>
         </div>
       </div>
@@ -722,7 +956,7 @@ export function renderServicesPage() {
                 </div>
                 <h3 class="card__title">IP Filing</h3>
                 <p class="card__desc">
-                  We help structure and document the technical engineering work so all novel inventions, kinematics, and control mechanisms are prepared for IP filing with appropriate legal and patent professionals.
+                  With 6+ patents already filed by our team, we help structure technical work so novel inventions, kinematics, and control mechanisms are prepared for defensible IP prosecution.
                 </p>
                 <div class="card__activities">
                   <span class="activity-badge">Technical Invention Disclosures</span>
@@ -744,7 +978,7 @@ export function renderServicesPage() {
       <div class="container">
         <div class="section-intro">
           <div class="section-label">WHO WE WORK WITH</div>
-          <h2 class="section-headline reveal-heading">Built for founders needing the engineering team.</h2>
+          <h2 class="section-headline reveal-heading">Built for founders needing an elite engineering squad.</h2>
           <p class="section-lead reveal-body">
             We partner with operators who understand market problems but need high-horsepower robotics capability to build the physical solution.
           </p>
@@ -753,17 +987,17 @@ export function renderServicesPage() {
         <div class="audience-grid">
           <div class="audience-card reveal-card">
             <span class="audience-number">AUDIENCE 01 //</span>
-            <h4 class="audience-title">Non-Technical Founders</h4>
+            <h4 class="audience-title">Agricultural & Industrial Operators</h4>
             <p class="audience-desc">
-              "You understand the problem and the commercial opportunity, but need an elite engineering team capable of building the physical system."
+              "You operate commercial agricultural or industrial operations needing custom automated physical machines to solve labor and safety challenges."
             </p>
           </div>
 
           <div class="audience-card reveal-card">
             <span class="audience-number">AUDIENCE 02 //</span>
-            <h4 class="audience-title">Pre-Seed Startups</h4>
+            <h4 class="audience-title">Pre-Seed Hardware Startups</h4>
             <p class="audience-desc">
-              "You need a credible, working physical prototype to prove feasibility to investors and customers before raising your next round."
+              "You need a credible, working physical prototype to prove feasibility to investors and enterprise customers before raising your next round."
             </p>
           </div>
 
@@ -836,7 +1070,7 @@ export function renderServicesPage() {
           "Have the idea.<br>Need the machine?"
         </h2>
         <p class="cta-subtext">
-          Tell us what you're trying to build. We'll assess technical feasibility and discuss how to prototype it.
+          Tell us what you're trying to build. Reach our engineering team at <a href="mailto:thenine.enquiry@gmail.com" style="color: var(--blue-accent);">thenine.enquiry@gmail.com</a>.
         </p>
         <button class="btn btn--primary btn--large" data-open-modal="contact" data-prefill="services">
           <span>Start a conversation</span>
