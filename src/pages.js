@@ -1,6 +1,6 @@
 /**
  * pages.js — Thenine LLP Core Page Templates
- * 1. Investors Page (Investment Opportunities, Core Business, Patent Techs, Thesis, Roadmap, 6-Member Team, SAFE)
+ * 1. Investors Page (Investment Opportunities, Core Business, Patent Techs, Thesis, Founder Leadership, 6-Member Team, SAFE)
  * 2. Careers Page (Join 6-member founding engineering team, Technical Roles)
  * 3. Services Page (From idea to prototype to IP, 4-stage process, 6+ IPs track record)
  */
@@ -293,8 +293,8 @@ export function renderInvestorsPage() {
         <div class="section-label">02 // THESIS</div>
         <div class="thesis-callout reveal-card">
           <h2 class="thesis-statement">
-            "Fixed automation works when the world is predictable.<br>
-            We are building robotics & patented technologies for when it isn't."
+            &ldquo;Fixed automation works when the world is predictable.<br>
+            We are building robotics &amp; patented technologies for when it isn't.&rdquo;
           </h2>
           <div class="thesis-body">
             <p>
@@ -315,73 +315,78 @@ export function renderInvestorsPage() {
       </div>
     </section>
 
-    <!-- 03 / 12-MONTH ROADMAP -->
-    <section class="investors-roadmap-section" id="roadmap">
-      <div class="container">
-        <div class="section-intro">
-          <div class="section-label">03 // ROADMAP</div>
-          <h2 class="section-headline reveal-heading">The next 12 months.</h2>
-          <p class="section-lead reveal-body">
-            A disciplined engineering trajectory to derisk our core Agri-Robotics platform and advance patent technologies toward commercial deployment.
-          </p>
-        </div>
-
-        <div class="roadmap-timeline">
-          <div class="roadmap-card reveal-card">
-            <span class="roadmap-timeframe">0 – 3 MONTHS</span>
-            <h4 class="roadmap-phase-title">Field Testbed & Sensor Stack</h4>
-            <ul class="roadmap-deliverables">
-              <li>Refine arecanut climbing & gripping actuation</li>
-              <li>Integrated multimodal depth sensor & canopy camera</li>
-              <li>Bench validation for Easy Fix Socket contact cycling</li>
-              <li>Scale 6+ IP filing defense & publication milestones</li>
-            </ul>
-          </div>
-
-          <div class="roadmap-card reveal-card">
-            <span class="roadmap-timeframe">3 – 6 MONTHS</span>
-            <h4 class="roadmap-phase-title">Active Field Trials</h4>
-            <ul class="roadmap-deliverables">
-              <li>Deploy arecanut robot in commercial plantations</li>
-              <li>Execute automated harvesting & spraying test loops</li>
-              <li>Canal flume hydrodynamic testing of Low-Head energy system</li>
-              <li>Incorporate feedback from agricultural operators</li>
-            </ul>
-          </div>
-
-          <div class="roadmap-card reveal-card">
-            <span class="roadmap-timeframe">6 – 9 MONTHS</span>
-            <h4 class="roadmap-phase-title">RaaS Pilot Rollout</h4>
-            <ul class="roadmap-deliverables">
-              <li>Initiate first paid Robotics-as-a-Service (RaaS) contracts</li>
-              <li>Stress-test endurance across hundreds of trees</li>
-              <li>Prototype pilot installations for modular socket in partner sites</li>
-              <li>Publish 2nd peer-reviewed research validation paper</li>
-            </ul>
-          </div>
-
-          <div class="roadmap-card reveal-card">
-            <span class="roadmap-timeframe">9 – 12 MONTHS</span>
-            <h4 class="roadmap-phase-title">Commercial Demonstration</h4>
-            <ul class="roadmap-deliverables">
-              <li>Multi-unit fleet deployment for harvesting & spraying</li>
-              <li>Licensing & production partnerships for Easy Fix Socket</li>
-              <li>Microgrid pilot launch for Ultra-Low-Head system</li>
-              <li>Prepare commercial expansion & institutional seed round</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 / FOUNDING TEAM & RESEARCH TRACK RECORD -->
+    <!-- 03 / FOUNDING LEADERSHIP & 6-MEMBER SQUAD -->
     <section class="investors-team-section" id="team">
       <div class="container">
         <div class="section-intro">
-          <div class="section-label">04 // FOUNDING SQUAD</div>
-          <h2 class="section-headline reveal-heading">6 Team Members driving end-to-end robotics & patented R&D.</h2>
+          <div class="section-label">03 // FOUNDING LEADERSHIP &amp; TEAM</div>
+          <h2 class="section-headline reveal-heading">Leadership with conviction in deep-tech execution.</h2>
           <p class="section-lead reveal-body">
-            A tight-knit multidisciplinary team of 6 engineers and researchers combining mechanical precision, real-time control, perception, and patent formulation — backed by 6+ filed IPs and 2+ published research articles.
+            Meet the founders leading THENINE — backed by a tight-knit squad of 6 multidisciplinary engineers and researchers, 6+ filed patents, and 2+ peer-reviewed research publications.
+          </p>
+        </div>
+
+        <!-- Co-Founders Showcase Grid -->
+        <div class="founders-grid">
+          <!-- Founder & CEO: Mr. Shravan Kumar -->
+          <article class="founder-card reveal-card">
+            <div class="founder-card__profile">
+              <div class="founder-img-wrap">
+                <img src="./shravan-kumar.jpg" alt="Mr. Shravan Kumar — Founder & CEO" class="founder-img" />
+              </div>
+              <div class="founder-card__titles">
+                <span class="founder-role-badge">FOUNDER &amp; CEO</span>
+                <h3 class="founder-name">Mr. Shravan Kumar</h3>
+                <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted); letter-spacing: 0.06em;">THENINE LLP</span>
+              </div>
+            </div>
+
+            <blockquote class="founder-quote">
+              &ldquo;We are building the future today. At the pre-seed stage, our focus over the next year is to build, validate, and demonstrate indigenous robotic technologies that contribute to India’s growing robotics ecosystem. With a clear five-year vision, we are laying the technological, intellectual property, and organizational foundation to take Indian robotics from innovation to global impact.&rdquo;
+            </blockquote>
+
+            <div class="founder-tags">
+              <span class="founder-tag">Vision &amp; Strategy</span>
+              <span class="founder-tag">Indigenous Robotics</span>
+              <span class="founder-tag">IP Strategy</span>
+              <span class="founder-tag">Ecosystem Impact</span>
+            </div>
+          </article>
+
+          <!-- Co-founder & CFO: Mr. Ganesh Kumar -->
+          <article class="founder-card reveal-card">
+            <div class="founder-card__profile">
+              <div class="founder-img-wrap">
+                <img src="./ganesh-kumar.jpg" alt="Mr. Ganesh Kumar — Co-founder & CFO" class="founder-img" />
+              </div>
+              <div class="founder-card__titles">
+                <span class="founder-role-badge">CO-FOUNDER &amp; CFO</span>
+                <h3 class="founder-name">Mr. Ganesh Kumar</h3>
+                <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted); letter-spacing: 0.06em;">THENINE LLP</span>
+              </div>
+            </div>
+
+            <blockquote class="founder-quote">
+              &ldquo;We are confident that THENINE presents an opportunity to build long-term value for our investors. With disciplined financial management, strategic capital deployment, and a clear growth roadmap, we aim to create sustainable value as THENINE scales.&rdquo;
+            </blockquote>
+
+            <div class="founder-tags">
+              <span class="founder-tag">Financial Architecture</span>
+              <span class="founder-tag">Capital Deployment</span>
+              <span class="founder-tag">Investor Governance</span>
+              <span class="founder-tag">Scale &amp; Value Creation</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 6-Member Multidisciplinary Engineering Pillars -->
+        <div style="margin-top: 40px; margin-bottom: 24px;">
+          <div class="section-label" style="margin-bottom: 8px;">// TECHNICAL EXECUTION SQUAD</div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--text-white);" class="reveal-heading">
+            6 Team Members Driving End-to-End Robotics &amp; Patented R&amp;D
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 6px;">
+            A multidisciplinary team combining mechanical precision, real-time control, perception, and patent prosecution — with 6+ IPs filed and 2+ research articles published.
           </p>
         </div>
 
@@ -390,8 +395,8 @@ export function renderInvestorsPage() {
             <div class="pillar-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             </div>
-            <span class="team-role-badge">CORE PILLAR 01</span>
-            <h3 class="team-name">Robotics Systems & Architecture</h3>
+            <span class="team-role-badge">PILLAR 01</span>
+            <h4 class="team-name">Robotics Systems & Architecture</h4>
             <p class="team-bio">
               Orchestrating end-to-end mechatronics, system integration, and autonomous field operational loops for the Arecanut platform.
             </p>
@@ -404,8 +409,8 @@ export function renderInvestorsPage() {
             <div class="pillar-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </div>
-            <span class="team-role-badge">CORE PILLAR 02</span>
-            <h3 class="team-name">Mechanical CAD & Kinematics</h3>
+            <span class="team-role-badge">PILLAR 02</span>
+            <h4 class="team-name">Mechanical CAD & Kinematics</h4>
             <p class="team-bio">
               Designing tree-climbing gripping mechanisms, harvesting end-effectors, modular socket snap geometries, and lightweight chassis.
             </p>
@@ -418,8 +423,8 @@ export function renderInvestorsPage() {
             <div class="pillar-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <span class="team-role-badge">CORE PILLAR 03</span>
-            <h3 class="team-name">Embedded Firmware & Controls</h3>
+            <span class="team-role-badge">PILLAR 03</span>
+            <h4 class="team-name">Embedded Firmware & Controls</h4>
             <p class="team-bio">
               Developing real-time motor actuation, closed-loop sensor telemetry, wireless remote monitoring, and power management electronics.
             </p>
@@ -432,8 +437,8 @@ export function renderInvestorsPage() {
             <div class="pillar-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
-            <span class="team-role-badge">CORE PILLAR 04</span>
-            <h3 class="team-name">Perception & Computer Vision</h3>
+            <span class="team-role-badge">PILLAR 04</span>
+            <h4 class="team-name">Perception & Computer Vision</h4>
             <p class="team-bio">
               Building vision pipelines for canopy depth estimation, bunch ripeness segmentation, and precision targeting in outdoor agricultural light.
             </p>
@@ -446,8 +451,8 @@ export function renderInvestorsPage() {
             <div class="pillar-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/></svg>
             </div>
-            <span class="team-role-badge">CORE PILLAR 05</span>
-            <h3 class="team-name">Fluid & Power Systems Engineering</h3>
+            <span class="team-role-badge">PILLAR 05</span>
+            <h4 class="team-name">Fluid & Power Systems Engineering</h4>
             <p class="team-bio">
               Engineering the Ultra-Low-Head hydrodynamic kinetic runners, flow channel dynamics, and clean energy power generation interfaces.
             </p>
@@ -460,8 +465,8 @@ export function renderInvestorsPage() {
             <div class="pillar-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
-            <span class="team-role-badge">CORE PILLAR 06</span>
-            <h3 class="team-name">Patent Strategy & Technical R&D</h3>
+            <span class="team-role-badge">PILLAR 06</span>
+            <h4 class="team-name">Patent Strategy & Technical R&D</h4>
             <p class="team-bio">
               Leading technical invention disclosures, patent claims drafting, 6+ filed IP prosecutions, and authoring peer-reviewed research publications.
             </p>
@@ -473,10 +478,10 @@ export function renderInvestorsPage() {
       </div>
     </section>
 
-    <!-- 05 / SAFE FUNDRAISE SECTION -->
+    <!-- 04 / SAFE FUNDRAISE SECTION -->
     <section class="investors-fundraise-section" id="fundraise">
       <div class="container">
-        <div class="section-label">05 // FUNDRAISE</div>
+        <div class="section-label">04 // FUNDRAISE</div>
         <div class="fundraise-panel reveal-card">
           <div class="fundraise-stats">
             <div>
@@ -513,7 +518,7 @@ export function renderInvestorsPage() {
               <li>Production tooling & compliance certification for Easy Fix Modular Socket</li>
               <li>Canal deployment testbed for Ultra-Low-Head Energy System</li>
               <li>Continued prosecution and defense of our portfolio of 6+ filed patents</li>
-              <li>Core 6-member engineering team retention and key additions</li>
+              <li>Core engineering squad scale-up and key technical talent</li>
             </ul>
             <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 12px;">
               <button class="btn btn--primary btn--full" data-open-modal="contact" data-prefill="investor">
@@ -535,10 +540,10 @@ export function renderInvestorsPage() {
       <div class="container cta-container">
         <div class="section-label">// CONNECT WITH FOUNDERS</div>
         <h2 class="cta-headline">
-          "Partner with THENINE on the next frontier of real-world robotics & clean innovation."
+          &ldquo;Partner with THENINE on the next frontier of real-world robotics &amp; clean innovation.&rdquo;
         </h2>
         <p class="cta-subtext">
-          Direct dialogue with our 6-member engineering squad. Accredited investor introductions, RaaS deployment partners, and IP licensing inquiries are welcome.
+          Direct dialogue with our founders and engineering squad. Accredited investor introductions, RaaS deployment partners, and IP licensing inquiries are welcome.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <button class="btn btn--primary btn--large" data-open-modal="contact" data-prefill="investor">
@@ -626,7 +631,7 @@ export function renderCareersPage() {
             <span class="why-number">02</span>
             <h4 class="why-title">High-Impact Equity & Growth</h4>
             <p class="why-desc">
-              Join during the foundational phase of our technology platform alongside 6 dedicated technical colleagues with generous founding equity.
+              Join during the foundational phase of our technology platform alongside dedicated technical colleagues with generous founding equity.
             </p>
           </div>
 
@@ -781,7 +786,7 @@ export function renderCareersPage() {
       <div class="cta-radial-glow"></div>
       <div class="container cta-container">
         <div class="section-label">// APPLICATION</div>
-        <h2 class="cta-headline">"Help build the machine."</h2>
+        <h2 class="cta-headline">&ldquo;Help build the machine.&rdquo;</h2>
         <p class="cta-subtext">
           Send your portfolio, GitHub, or videos of what you've physically built directly to our engineering team at <a href="mailto:thenine.enquiry@gmail.com" style="color: var(--blue-accent);">thenine.enquiry@gmail.com</a>.
         </p>
@@ -845,7 +850,7 @@ export function renderServicesPage() {
       </div>
     </section>
 
-    <!-- SERVICES PROCESS (PINNED SCROLLYTELLING 400vh) -->
+    <!-- SERVICES PROCESS (PINNED SCROLLYTELLING) -->
     <section class="services-scrolly-wrapper" id="services-process">
       <div class="services-sticky-viewport" id="services-pin">
 
@@ -1067,7 +1072,7 @@ export function renderServicesPage() {
       <div class="container cta-container">
         <div class="section-label">// GET STARTED</div>
         <h2 class="cta-headline">
-          "Have the idea.<br>Need the machine?"
+          &ldquo;Have the idea.<br>Need the machine?&rdquo;
         </h2>
         <p class="cta-subtext">
           Tell us what you're trying to build. Reach our engineering team at <a href="mailto:thenine.enquiry@gmail.com" style="color: var(--blue-accent);">thenine.enquiry@gmail.com</a>.

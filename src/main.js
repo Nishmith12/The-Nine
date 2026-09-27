@@ -57,8 +57,8 @@ function navigateTo(pageName, shouldScroll = true) {
   currentPage = pageName;
   window.location.hash = pageName;
 
-  // Kill existing ScrollTriggers before rendering new page
-  ScrollTrigger.getAll().forEach((st) => st.kill());
+  // Kill existing ScrollTriggers and revert pin spacers before rendering new page
+  ScrollTrigger.getAll().forEach((st) => st.kill(true));
 
   const app = document.getElementById('app');
   app.innerHTML = pages[pageName]();
@@ -154,7 +154,7 @@ function bindPageEvents() {
     });
   });
 
-  // In-page smooth hash links (e.g. #thesis, #open-roles)
+  // In-page smooth hash links (e.g. #thesis, #open-roles, #services-process)
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
@@ -162,8 +162,10 @@ function bindPageEvents() {
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
+          const isPinSection = href === '#services-process';
+          const scrollOffset = isPinSection ? 0 : -70;
           if (lenis) {
-            lenis.scrollTo(target, { offset: -70, duration: 1.2 });
+            lenis.scrollTo(target, { offset: scrollOffset, duration: 1.2 });
           } else {
             target.scrollIntoView({ behavior: 'smooth' });
           }
@@ -334,15 +336,26 @@ function initServicesPinnedProcess() {
 
   if (!section || !viewport || cards.length === 0) return;
 
-  if (prefersReducedMotion) {
-    cards.forEach((c) => c.classList.add('active'));
+  // On mobile/tablet (<= 1024px) or reduced motion: keep all cards active and visible in natural document flow
+  if (prefersReducedMotion || window.innerWidth <= 1024) {
+    cards.forEach((c) => {
+      c.classList.add('active');
+      c.classList.remove('passed');
+    });
     return;
+  }
+
+  // Set initial indicator line position
+  if (progressLine && tabs[0]) {
+    progressLine.style.width = `${tabs[0].offsetWidth}px`;
+    progressLine.style.transform = `translateX(${tabs[0].offsetLeft}px)`;
   }
 
   // Pinned GSAP ScrollTrigger
   ScrollTrigger.create({
     trigger: section,
     pin: viewport,
+    pinSpacing: true,
     start: 'top top',
     end: 'bottom bottom',
     scrub: 1,
@@ -351,10 +364,6 @@ function initServicesPinnedProcess() {
       const progress = self.progress; // 0 to 1
 
       // 4 stages mapped across the 400vh scroll
-      // 0.00 – 0.25 -> Stage 01
-      // 0.25 – 0.50 -> Stage 02
-      // 0.50 – 0.75 -> Stage 03
-      // 0.75 – 1.00 -> Stage 04
       const numStages = 4;
       const raw = progress * numStages;
       const activeIdx = Math.min(Math.floor(raw), numStages - 1);
@@ -379,8 +388,9 @@ function initServicesPinnedProcess() {
         tab.classList.toggle('active', idx === activeIdx);
       });
 
-      if (progressLine) {
-        progressLine.style.transform = `translateX(${activeIdx * 100}%)`;
+      if (progressLine && tabs[activeIdx]) {
+        progressLine.style.width = `${tabs[activeIdx].offsetWidth}px`;
+        progressLine.style.transform = `translateX(${tabs[activeIdx].offsetLeft}px)`;
       }
 
       // Update Telemetry Badge
@@ -397,12 +407,14 @@ function initServicesPinnedProcess() {
     },
   });
 
-  // Clicking progress tabs jumps to stage
+  // Clicking progress tabs jumps accurately to stage
   tabs.forEach((tab, idx) => {
     tab.addEventListener('click', () => {
-      const sectionTop = section.offsetTop;
+      const rect = section.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const sectionTop = rect.top + scrollTop;
       const sectionHeight = section.offsetHeight - window.innerHeight;
-      const targetScroll = sectionTop + (idx / 4) * sectionHeight + 5;
+      const targetScroll = sectionTop + ((idx + 0.15) / 4) * sectionHeight;
       if (lenis) {
         lenis.scrollTo(targetScroll, { duration: 1.2 });
       } else {
