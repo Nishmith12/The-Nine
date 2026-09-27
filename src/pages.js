@@ -618,27 +618,27 @@ export function renderCareersPage() {
           </p>
         </div>
 
-        <div class="why-grid">
-          <div class="why-card reveal-card">
-            <span class="why-number">01</span>
-            <h4 class="why-title">True Hardware Ownership</h4>
-            <p class="why-desc">
+        <div class="why-grid why-early-grid">
+          <div class="why-card why-early-card reveal-card">
+            <span class="why-number why-card-icon">01</span>
+            <h4 class="why-title why-card-title">True Hardware Ownership</h4>
+            <p class="why-desc why-card-desc">
               Own complete subsystems from first sketch in CAD to machining, PCB assembly, firmware, field testing, and patent filing.
             </p>
           </div>
 
-          <div class="why-card reveal-card">
-            <span class="why-number">02</span>
-            <h4 class="why-title">High-Impact Equity & Growth</h4>
-            <p class="why-desc">
+          <div class="why-card why-early-card reveal-card">
+            <span class="why-number why-card-icon">02</span>
+            <h4 class="why-title why-card-title">High-Impact Equity & Growth</h4>
+            <p class="why-desc why-card-desc">
               Join during the foundational phase of our technology platform alongside dedicated technical colleagues with generous founding equity.
             </p>
           </div>
 
-          <div class="why-card reveal-card">
-            <span class="why-number">03</span>
-            <h4 class="why-title">Real Field Validation</h4>
-            <p class="why-desc">
+          <div class="why-card why-early-card reveal-card">
+            <span class="why-number why-card-icon">03</span>
+            <h4 class="why-title why-card-title">Real Field Validation</h4>
+            <p class="why-desc why-card-desc">
               Our robots deploy directly into real commercial farms, canals, and test facilities. Instant feedback from real physics, not synthetic simulations.
             </p>
           </div>
@@ -657,7 +657,7 @@ export function renderCareersPage() {
           </p>
         </div>
 
-        <div class="roles-list">
+        <div class="roles-list roles-stack">
           <!-- Role 01 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
@@ -850,129 +850,252 @@ export function renderServicesPage() {
       </div>
     </section>
 
-    <!-- SERVICES PROCESS (PINNED SCROLLYTELLING) -->
-    <section class="services-scrolly-wrapper" id="services-process">
-      <div class="services-sticky-viewport" id="services-pin">
+    <!-- SERVICES PROCESS (INTERACTIVE 4-STAGE SHOWCASE) -->
+    <section class="services-process-section" id="services-process">
+      <div class="container">
+        
+        <div class="section-intro">
+          <div class="section-label">PROCESS // END-TO-END R&D</div>
+          <h2 class="section-headline reveal-heading">The 4-Stage Lifecycle</h2>
+          <p class="section-lead reveal-body">
+            From initial physics & feasibility to custom hardware engineering, empirical field testing, and defensible IP protection.
+          </p>
+        </div>
 
-        <div class="services-grid">
-          <!-- Left: 3D Visualization Target & Telemetry HUD -->
-          <div class="services-visual-col">
-            <div class="services-3d-target">
-              <div class="services-stage-hud">
-                <div class="stage-hud__header">
-                  <span class="stage-hud__badge" id="service-hud-badge">01 // IDEA & FEASIBILITY</span>
-                  <span class="stage-hud__coord">SYS_VEC: [1.88, 0.42, -0.15]</span>
-                </div>
-                <div class="stage-hud__waveform">
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                  <div class="wave-bar"></div>
-                </div>
+        <!-- Stage Navigation Tabs -->
+        <div class="services-tabs-nav" role="tablist">
+          <button class="stage-nav-btn active" data-stage="0" role="tab" aria-selected="true">
+            <span class="nav-step">01</span>
+            <span class="nav-title">Feasibility</span>
+          </button>
+          <button class="stage-nav-btn" data-stage="1" role="tab" aria-selected="false">
+            <span class="nav-step">02</span>
+            <span class="nav-title">Prototype</span>
+          </button>
+          <button class="stage-nav-btn" data-stage="2" role="tab" aria-selected="false">
+            <span class="nav-step">03</span>
+            <span class="nav-title">Testing</span>
+          </button>
+          <button class="stage-nav-btn" data-stage="3" role="tab" aria-selected="false">
+            <span class="nav-step">04</span>
+            <span class="nav-title">IP Filing</span>
+          </button>
+        </div>
+
+        <!-- Interactive 2-Column Stage Showcase -->
+        <div class="services-showcase-grid">
+          
+          <!-- Left Column: Telemetry HUD Card -->
+          <div class="services-hud-card reveal-card">
+            <div class="hud-top">
+              <div class="hud-badge-wrap">
+                <span class="pulse-dot pulse-dot--cyan"></span>
+                <span class="hud-badge" id="service-hud-badge">01 // IDEA & FEASIBILITY</span>
               </div>
+              <span class="hud-coord" id="service-hud-coord">SYS_VEC: [1.88, 0.42, -0.15]</span>
+            </div>
+
+            <!-- Waveform visualizer -->
+            <div class="hud-waveform-panel">
+              <div class="hud-wave-label">DYNAMIC KINEMATIC FREQUENCY</div>
+              <div class="hud-waveform">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+              </div>
+            </div>
+
+            <!-- Stage Telemetry Specs -->
+            <div class="hud-metrics-grid">
+              <div class="hud-metric">
+                <span class="metric-label">PHASE INDEX</span>
+                <span class="metric-val" id="hud-metric-index">01 / 04</span>
+              </div>
+              <div class="hud-metric">
+                <span class="metric-label">CYCLE DURATION</span>
+                <span class="metric-val" id="hud-metric-timeline">2 – 4 Weeks</span>
+              </div>
+              <div class="hud-metric">
+                <span class="metric-label">PRIMARY FOCUS</span>
+                <span class="metric-val" id="hud-metric-focus">Physics & Limits</span>
+              </div>
+              <div class="hud-metric">
+                <span class="metric-label">CORE DELIVERABLE</span>
+                <span class="metric-val" id="hud-metric-deliverable">Kinematic Model</span>
+              </div>
+            </div>
+
+            <!-- Stage Navigation Controls -->
+            <div class="hud-controls">
+              <button class="btn btn--outline-sm" id="services-prev-btn" aria-label="Previous Stage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                <span>Prev Phase</span>
+              </button>
+              <div class="hud-stage-dots">
+                <span class="stage-dot active" data-stage="0"></span>
+                <span class="stage-dot" data-stage="1"></span>
+                <span class="stage-dot" data-stage="2"></span>
+                <span class="stage-dot" data-stage="3"></span>
+              </div>
+              <button class="btn btn--outline-sm" id="services-next-btn" aria-label="Next Stage">
+                <span>Next Phase</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
             </div>
           </div>
 
-          <!-- Right: Headings & 4 Stages Card Stack -->
-          <div class="services-content-col">
-            <div class="services-header">
-              <div class="section-label">PROCESS // END-TO-END R&D</div>
-              <h2 style="font-family: var(--font-display); font-size: 2.8rem; color: var(--text-white); margin-bottom: 12px; letter-spacing: -0.03em;">
-                The 4-Stage Lifecycle
-              </h2>
-              <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 24px;">
-                Scroll through each phase. The viewport stays pinned while your concept transforms into a protected physical system.
+          <!-- Right Column: Active Stage Card Stack -->
+          <div class="services-cards-stack">
+            <!-- Stage 01 -->
+            <article class="service-card active" id="service-card-0" data-service="0">
+              <div class="card__header">
+                <span class="card__number">STAGE 01</span>
+                <span class="card__tag">CONCEPT & FEASIBILITY</span>
+              </div>
+              <h3 class="card__title">Idea & Feasibility</h3>
+              <p class="card__desc">
+                We start by rigorously analyzing the target use case, technical constraints, physics boundaries, and whether the robotics idea can realistically and commercially be built.
               </p>
               
-              <div class="services-progress-track">
-                <div class="progress-tab active" data-index="0">01 Feasibility</div>
-                <div class="progress-tab" data-index="1">02 Prototype</div>
-                <div class="progress-tab" data-index="2">03 Testing</div>
-                <div class="progress-tab" data-index="3">04 IP Filing</div>
-                <div class="progress-indicator-line" id="services-progress-line"></div>
+              <div class="card__section-label">KEY ACTIVITIES</div>
+              <div class="card__activities">
+                <span class="activity-badge">Requirements Formulation</span>
+                <span class="activity-badge">Kinematic Feasibility</span>
+                <span class="activity-badge">System Architecture</span>
+                <span class="activity-badge">Component Selection</span>
+                <span class="activity-badge">Technical Risk Derisking</span>
               </div>
-            </div>
 
-            <div class="services-cards-stack">
-              <!-- Stage 01 -->
-              <article class="service-card active" id="service-card-0" data-service="0">
-                <div class="card__header">
-                  <span class="card__number">STAGE 01</span>
-                  <span class="card__tag">CONCEPT & FEASIBILITY</span>
-                </div>
-                <h3 class="card__title">Idea & Feasibility</h3>
-                <p class="card__desc">
-                  We start by rigorously analyzing the target use case, technical constraints, physics boundaries, and whether the robotics idea can realistically and commercially be built.
-                </p>
-                <div class="card__activities">
-                  <span class="activity-badge">Requirements Formulation</span>
-                  <span class="activity-badge">Kinematic Feasibility</span>
-                  <span class="activity-badge">System Architecture</span>
-                  <span class="activity-badge">Component Selection</span>
-                  <span class="activity-badge">Technical Risk Derisking</span>
-                </div>
-              </article>
+              <div class="card__section-label" style="margin-top: 20px;">KEY DELIVERABLES</div>
+              <ul class="card__deliverables-list">
+                <li>Mathematical & kinematic feasibility model</li>
+                <li>CAD operating envelope definition</li>
+                <li>Component selection & BOM cost derisking</li>
+                <li>Actuator sizing and power profile analysis</li>
+              </ul>
 
-              <!-- Stage 02 -->
-              <article class="service-card" id="service-card-1" data-service="1">
-                <div class="card__header">
-                  <span class="card__number">STAGE 02</span>
-                  <span class="card__tag">PHYSICAL SYSTEM SYNTHESIS</span>
-                </div>
-                <h3 class="card__title">Prototype Build</h3>
-                <p class="card__desc">
-                  We design, machine, wire, and program the first integrated working robotic prototype. Moving seamlessly across mechanical, electronic, firmware, and software boundaries.
-                </p>
-                <div class="card__activities">
-                  <span class="activity-badge">Mechanical CAD & FEA</span>
-                  <span class="activity-badge">Custom Motor Electronics</span>
-                  <span class="activity-badge">Embedded Firmware</span>
-                  <span class="activity-badge">Robotics Software Stack</span>
-                  <span class="activity-badge">Rapid CNC & Machining</span>
-                </div>
-              </article>
+              <div class="card__action-row">
+                <button class="btn btn--primary" data-open-modal="contact" data-prefill="services" data-role="Stage 01 Feasibility">
+                  <span>Inquire on Feasibility</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </article>
 
-              <!-- Stage 03 -->
-              <article class="service-card" id="service-card-2" data-service="2">
-                <div class="card__header">
-                  <span class="card__number">STAGE 03</span>
-                  <span class="card__tag">EMPIRICAL CALIBRATION</span>
-                </div>
-                <h3 class="card__title">Testing & Iteration</h3>
-                <p class="card__desc">
-                  We rigorously test against real-world variation, identify mechanical and algorithmic failure modes, and iterate rapidly to drive the system toward robust repeatability.
-                </p>
-                <div class="card__activities">
-                  <span class="activity-badge">Stress & Duty Profiling</span>
-                  <span class="activity-badge">Telemetry Data Collection</span>
-                  <span class="activity-badge">Reliability Benchmarking</span>
-                  <span class="activity-badge">Kinematic Revisions</span>
-                  <span class="activity-badge">Control Loop Tuning</span>
-                </div>
-              </article>
+            <!-- Stage 02 -->
+            <article class="service-card" id="service-card-1" data-service="1">
+              <div class="card__header">
+                <span class="card__number">STAGE 02</span>
+                <span class="card__tag">PHYSICAL SYSTEM SYNTHESIS</span>
+              </div>
+              <h3 class="card__title">Prototype Build</h3>
+              <p class="card__desc">
+                We design, machine, wire, and program the first integrated working robotic prototype. Moving seamlessly across mechanical, electronic, firmware, and software boundaries.
+              </p>
 
-              <!-- Stage 04 -->
-              <article class="service-card" id="service-card-3" data-service="3">
-                <div class="card__header">
-                  <span class="card__number">STAGE 04</span>
-                  <span class="card__tag">IP STRUCTURE & FILING</span>
-                </div>
-                <h3 class="card__title">IP Filing</h3>
-                <p class="card__desc">
-                  With 6+ patents already filed by our team, we help structure technical work so novel inventions, kinematics, and control mechanisms are prepared for defensible IP prosecution.
-                </p>
-                <div class="card__activities">
-                  <span class="activity-badge">Technical Invention Disclosures</span>
-                  <span class="activity-badge">Engineering Schematics</span>
-                  <span class="activity-badge">Claim Technical Support</span>
-                  <span class="activity-badge">Patent Counsel Briefing</span>
-                  <span class="activity-badge">Defensible Novelty Prep</span>
-                </div>
-              </article>
-            </div>
+              <div class="card__section-label">KEY ACTIVITIES</div>
+              <div class="card__activities">
+                <span class="activity-badge">Mechanical CAD & FEA</span>
+                <span class="activity-badge">Custom Motor Electronics</span>
+                <span class="activity-badge">Embedded Firmware</span>
+                <span class="activity-badge">Robotics Software Stack</span>
+                <span class="activity-badge">Rapid CNC & Machining</span>
+              </div>
+
+              <div class="card__section-label" style="margin-top: 20px;">KEY DELIVERABLES</div>
+              <ul class="card__deliverables-list">
+                <li>Integrated 3D CAD assemblies & manufacturing drawings</li>
+                <li>Custom PCB design, board fabrication & harness routing</li>
+                <li>Low-latency real-time motor control firmware</li>
+                <li>Fully functional physical prototype unit assembled</li>
+              </ul>
+
+              <div class="card__action-row">
+                <button class="btn btn--primary" data-open-modal="contact" data-prefill="services" data-role="Stage 02 Prototype">
+                  <span>Inquire on Prototype Build</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- Stage 03 -->
+            <article class="service-card" id="service-card-2" data-service="2">
+              <div class="card__header">
+                <span class="card__number">STAGE 03</span>
+                <span class="card__tag">EMPIRICAL CALIBRATION</span>
+              </div>
+              <h3 class="card__title">Testing & Iteration</h3>
+              <p class="card__desc">
+                We rigorously test against real-world variation, identify mechanical and algorithmic failure modes, and iterate rapidly to drive the system toward robust repeatability.
+              </p>
+
+              <div class="card__section-label">KEY ACTIVITIES</div>
+              <div class="card__activities">
+                <span class="activity-badge">Stress & Duty Profiling</span>
+                <span class="activity-badge">Telemetry Data Collection</span>
+                <span class="activity-badge">Reliability Benchmarking</span>
+                <span class="activity-badge">Kinematic Revisions</span>
+                <span class="activity-badge">Control Loop Tuning</span>
+              </div>
+
+              <div class="card__section-label" style="margin-top: 20px;">KEY DELIVERABLES</div>
+              <ul class="card__deliverables-list">
+                <li>Empirical testing datasets & failure mode analysis</li>
+                <li>Thermal and continuous duty cycle validation</li>
+                <li>Firmware fail-safes and sensor calibration routines</li>
+                <li>Hardened revision 2 mechanical CAD updates</li>
+              </ul>
+
+              <div class="card__action-row">
+                <button class="btn btn--primary" data-open-modal="contact" data-prefill="services" data-role="Stage 03 Testing">
+                  <span>Inquire on Testing & Validation</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </article>
+
+            <!-- Stage 04 -->
+            <article class="service-card" id="service-card-3" data-service="3">
+              <div class="card__header">
+                <span class="card__number">STAGE 04</span>
+                <span class="card__tag">IP STRUCTURE & FILING</span>
+              </div>
+              <h3 class="card__title">IP Filing</h3>
+              <p class="card__desc">
+                With 6+ patents already filed by our team, we help structure technical work so novel inventions, kinematics, and control mechanisms are prepared for defensible IP prosecution.
+              </p>
+
+              <div class="card__section-label">KEY ACTIVITIES</div>
+              <div class="card__activities">
+                <span class="activity-badge">Technical Invention Disclosures</span>
+                <span class="activity-badge">Engineering Schematics</span>
+                <span class="activity-badge">Claim Technical Support</span>
+                <span class="activity-badge">Patent Counsel Briefing</span>
+                <span class="activity-badge">Defensible Novelty Prep</span>
+              </div>
+
+              <div class="card__section-label" style="margin-top: 20px;">KEY DELIVERABLES</div>
+              <ul class="card__deliverables-list">
+                <li>Comprehensive invention disclosure technical document</li>
+                <li>Exploded patent-grade mechanical illustration sheets</li>
+                <li>Novelty claim differentiators & kinematic formulations</li>
+                <li>Direct engineering coordination with IP attorneys</li>
+              </ul>
+
+              <div class="card__action-row">
+                <button class="btn btn--primary" data-open-modal="contact" data-prefill="services" data-role="Stage 04 IP Filing">
+                  <span>Inquire on IP & Patent Filing</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </article>
           </div>
+
         </div>
 
       </div>

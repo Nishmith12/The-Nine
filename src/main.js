@@ -60,15 +60,26 @@ function navigateTo(pageName, shouldScroll = true) {
   // Kill existing ScrollTriggers and revert pin spacers before rendering new page
   ScrollTrigger.getAll().forEach((st) => st.kill(true));
 
+  // Reset scroll synchronously right now to prevent scrub desync
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  if (lenis) {
+    lenis.stop();
+    lenis.scrollTo(0, { immediate: true });
+    lenis.start();
+  }
+
   const app = document.getElementById('app');
   app.innerHTML = pages[pageName]();
 
-  // Scroll to top
+  // Scroll to top again after DOM update
   if (shouldScroll) {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     if (lenis) {
       lenis.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo(0, 0);
     }
   }
 
@@ -82,11 +93,13 @@ function navigateTo(pageName, shouldScroll = true) {
 
   // Initialize page-specific animations
   requestAnimationFrame(() => {
+    gsap.set('.hero__content', { y: 0, opacity: 1, clearProps: 'transform' });
+
     initHeroAnimations();
     initGeneralScrollReveals();
 
     if (pageName === 'services') {
-      initServicesPinnedProcess();
+      initServicesProcessShowcase();
     } else if (pageName === 'investors') {
       updateSceneScroll({ activeServiceIndex: 0, activeServiceMix: 0 });
     } else if (pageName === 'careers') {
@@ -184,6 +197,7 @@ function initHeroAnimations() {
   }
 
   // Initial setup
+  gsap.set('.hero__content', { y: 0, opacity: 1, clearProps: 'transform' });
   gsap.set('.hero__line', { yPercent: 120, opacity: 0 });
   gsap.set('.hero__description', { y: 30, opacity: 0 });
   gsap.set('.hero__actions', { scale: 0.94, opacity: 0 });
@@ -267,7 +281,9 @@ function initGeneralScrollReveals() {
     '.approach-steps-grid .reveal-card',
     '.roadmap-timeline .reveal-card',
     '.team-grid .reveal-card',
+    '.why-grid .reveal-card',
     '.why-early-grid .reveal-card',
+    '.roles-list .reveal-card',
     '.roles-stack .reveal-card',
     '.audience-grid .reveal-card',
     '.models-grid .reveal-card',
@@ -318,111 +334,162 @@ function initGeneralScrollReveals() {
   }
 }
 
-// ─── 07. Services Pinned Process (The Core Requirement) ──
-function initServicesPinnedProcess() {
-  const section = document.getElementById('services-process');
-  const viewport = document.getElementById('services-pin');
+// ─── 07. Services Process Showcase (Interactive 4 Stages) ──
+function initServicesProcessShowcase() {
+  const tabs = document.querySelectorAll('.stage-nav-btn');
   const cards = document.querySelectorAll('.service-card');
-  const tabs = document.querySelectorAll('.progress-tab');
-  const progressLine = document.getElementById('services-progress-line');
-  const hudBadge = document.getElementById('service-hud-badge');
+  const dots = document.querySelectorAll('.stage-dot');
+  const prevBtn = document.getElementById('services-prev-btn');
+  const nextBtn = document.getElementById('services-next-btn');
 
-  const stageBadges = [
-    '01 // IDEA & FEASIBILITY',
-    '02 // PROTOTYPE BUILD',
-    '03 // TESTING & ITERATION',
-    '04 // IP FILING',
+  const hudBadge = document.getElementById('service-hud-badge');
+  const hudCoord = document.getElementById('service-hud-coord');
+  const hudIndex = document.getElementById('hud-metric-index');
+  const hudTimeline = document.getElementById('hud-metric-timeline');
+  const hudFocus = document.getElementById('hud-metric-focus');
+  const hudDeliverable = document.getElementById('hud-metric-deliverable');
+
+  const stageData = [
+    {
+      badge: '01 // IDEA & FEASIBILITY',
+      coord: 'SYS_VEC: [1.88, 0.42, -0.15]',
+      index: '01 / 04',
+      timeline: '2 – 4 Weeks',
+      focus: 'Physics & Limits',
+      deliverable: 'Kinematic Model',
+    },
+    {
+      badge: '02 // PROTOTYPE BUILD',
+      coord: 'SYS_VEC: [3.45, -1.12, 0.89]',
+      index: '02 / 04',
+      timeline: '6 – 12 Weeks',
+      focus: 'Mechatronics & Code',
+      deliverable: 'Working Prototype',
+    },
+    {
+      badge: '03 // TESTING & ITERATION',
+      coord: 'SYS_VEC: [0.94, 2.76, -1.41]',
+      index: '03 / 04',
+      timeline: '4 – 8 Weeks',
+      focus: 'Stress & Edge Cases',
+      deliverable: 'Validation Dataset',
+    },
+    {
+      badge: '04 // IP FILING',
+      coord: 'SYS_VEC: [2.15, -0.68, 3.20]',
+      index: '04 / 04',
+      timeline: '2 – 4 Weeks',
+      focus: 'Patent Prosecution',
+      deliverable: 'Defensible IP File',
+    },
   ];
 
-  if (!section || !viewport || cards.length === 0) return;
+  let currentStage = 0;
+  let autoPlayTimer = null;
 
-  // On mobile/tablet (<= 1024px) or reduced motion: keep all cards active and visible in natural document flow
-  if (prefersReducedMotion || window.innerWidth <= 1024) {
-    cards.forEach((c) => {
-      c.classList.add('active');
-      c.classList.remove('passed');
+  function setStage(idx) {
+    if (idx < 0) idx = stageData.length - 1;
+    if (idx >= stageData.length) idx = 0;
+    currentStage = idx;
+
+    // Update tabs
+    tabs.forEach((tab, i) => {
+      const isActive = i === idx;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
-    return;
-  }
 
-  // Set initial indicator line position
-  if (progressLine && tabs[0]) {
-    progressLine.style.width = `${tabs[0].offsetWidth}px`;
-    progressLine.style.transform = `translateX(${tabs[0].offsetLeft}px)`;
-  }
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+    });
 
-  // Pinned GSAP ScrollTrigger
-  ScrollTrigger.create({
-    trigger: section,
-    pin: viewport,
-    pinSpacing: true,
-    start: 'top top',
-    end: 'bottom bottom',
-    scrub: 1,
-    anticipatePin: 1,
-    onUpdate: (self) => {
-      const progress = self.progress; // 0 to 1
-
-      // 4 stages mapped across the 400vh scroll
-      const numStages = 4;
-      const raw = progress * numStages;
-      const activeIdx = Math.min(Math.floor(raw), numStages - 1);
-      const frac = raw - activeIdx;
-
-      // Update Card Visibility with Zero Overlap
-      cards.forEach((card, idx) => {
-        if (idx === activeIdx) {
-          card.classList.add('active');
-          card.classList.remove('passed');
-        } else if (idx < activeIdx) {
-          card.classList.remove('active');
-          card.classList.add('passed');
-        } else {
-          card.classList.remove('active');
-          card.classList.remove('passed');
-        }
-      });
-
-      // Update Tabs & Indicator Line
-      tabs.forEach((tab, idx) => {
-        tab.classList.toggle('active', idx === activeIdx);
-      });
-
-      if (progressLine && tabs[activeIdx]) {
-        progressLine.style.width = `${tabs[activeIdx].offsetWidth}px`;
-        progressLine.style.transform = `translateX(${tabs[activeIdx].offsetLeft}px)`;
-      }
-
-      // Update Telemetry Badge
-      if (hudBadge) {
-        hudBadge.textContent = stageBadges[activeIdx];
-      }
-
-      // Update 3D Visualizer Morphing
-      updateSceneScroll({
-        servicesProgress: progress,
-        activeServiceIndex: activeIdx,
-        activeServiceMix: frac,
-      });
-    },
-  });
-
-  // Clicking progress tabs jumps accurately to stage
-  tabs.forEach((tab, idx) => {
-    tab.addEventListener('click', () => {
-      const rect = section.getBoundingClientRect();
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const sectionTop = rect.top + scrollTop;
-      const sectionHeight = section.offsetHeight - window.innerHeight;
-      const targetScroll = sectionTop + ((idx + 0.15) / 4) * sectionHeight;
-      if (lenis) {
-        lenis.scrollTo(targetScroll, { duration: 1.2 });
+    // Update cards
+    cards.forEach((card, i) => {
+      if (i === idx) {
+        card.classList.add('active');
+        card.style.display = 'flex';
+        gsap.fromTo(card, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
       } else {
-        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        card.classList.remove('active');
+        card.style.display = 'none';
       }
     });
+
+    // Update HUD telemetry
+    const data = stageData[idx];
+    if (hudBadge) hudBadge.textContent = data.badge;
+    if (hudCoord) hudCoord.textContent = data.coord;
+    if (hudIndex) hudIndex.textContent = data.index;
+    if (hudTimeline) hudTimeline.textContent = data.timeline;
+    if (hudFocus) hudFocus.textContent = data.focus;
+    if (hudDeliverable) hudDeliverable.textContent = data.deliverable;
+
+    // Update 3D scene visualizer
+    updateSceneScroll({
+      activeServiceIndex: idx,
+      activeServiceMix: 0,
+    });
+  }
+
+  // Bind tab clicks
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const stageIdx = parseInt(tab.dataset.stage, 10);
+      setStage(stageIdx);
+      restartTimer();
+    });
   });
+
+  // Bind dot clicks
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const stageIdx = parseInt(dot.dataset.stage, 10);
+      setStage(stageIdx);
+      restartTimer();
+    });
+  });
+
+  // Bind Next / Prev buttons
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      setStage(currentStage - 1);
+      restartTimer();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      setStage(currentStage + 1);
+      restartTimer();
+    });
+  }
+
+  // Subtle auto-advance every 6.5s, pauses on user interaction
+  function startTimer() {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(() => {
+      setStage(currentStage + 1);
+    }, 6500);
+  }
+
+  function restartTimer() {
+    clearInterval(autoPlayTimer);
+    startTimer();
+  }
+
+  const container = document.getElementById('services-process');
+  if (container) {
+    container.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    container.addEventListener('mouseleave', () => startTimer());
+  }
+
+  // Initialize stage 0
+  setStage(0);
+  startTimer();
 }
+
+const initServicesPinnedProcess = initServicesProcessShowcase;
 
 // ─── 08. Contact Modal ───────────────────────────────
 function openContactModal(prefillType, prefillRole) {
