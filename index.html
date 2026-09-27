@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thenine LLP — Robotics for the Real World</title>
+  <meta name="description" content="Thenine LLP is a pre-seed robotics company building systems that conquer real-world variation instead of relying on fixed automation. End-to-end R&D from idea to prototype to filed IP." />
+  <meta name="keywords" content="robotics, physical intelligence, adaptive manipulation, pre-seed, Thenine LLP, robotics R&D, prototype, IP filing" />
+  <link rel="icon" type="image/png" href="/logo-symbol.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="dark-theme">
+  <!-- Minimalist Fixed Navigation -->
+  <header id="main-nav" class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#investors" class="nav__brand" data-page="investors" aria-label="Thenine LLP home">
+        <img src="/logo-symbol.png" alt="Thenine Logo" class="nav__logo-img" />
+        <span class="nav__wordmark">THENINE</span>
+        <span class="nav__badge">PRE-SEED</span>
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="nav-links">
+        <a href="#investors" class="nav__link active" data-page="investors">Investors</a>
+        <a href="#careers" class="nav__link" data-page="careers">Careers</a>
+        <a href="#services" class="nav__link" data-page="services">Services</a>
+        <button class="nav__cta" data-open-modal="contact">
+          <span>Contact</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fixed 3D WebGL Canvas Layer -->
+  <div id="three-canvas-container" class="canvas-container" aria-hidden="true"></div>
+
+  <!-- Telemetry HUD Bar (Pinned bottom-right) -->
+  <div id="telemetry-hud" class="hud" aria-hidden="true">
+    <div class="hud__item">
+      <span class="hud__dot"></span>
+      <span class="hud__label">SYS</span>
+      <span class="hud__val" id="hud-status">OPERATIONAL</span>
+    </div>
+    <div class="hud__item">
+      <span class="hud__label">MODE</span>
+      <span class="hud__val hud__val--accent" id="hud-mode">ADAPTIVE</span>
+    </div>
+    <div class="hud__item">
+      <span class="hud__label">LATENCY</span>
+      <span class="hud__val" id="hud-latency">&lt; 1.2MS</span>
+    </div>
+  </div>
+
+  <!-- Dynamic Page Content Injected by Router -->
+  <main id="app">
+    <!-- Injected by router (Investors / Careers / Services) -->
+  </main>
+
+  <!-- Shared Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container footer__container">
+      <div class="footer__top">
+        <div class="footer__brand-block">
+          <a href="#investors" data-page="investors" style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 12px;">
+            <img src="/logo-symbol.png" alt="Thenine Logo" class="footer__logo-img" />
+            <span style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #fff; letter-spacing: 0.14em;">THENINE</span>
+          </a>
+          <p class="footer__tagline">Robotics for the real world.</p>
+        </div>
+
+        <div class="footer__links-grid">
+          <div class="footer__nav-col">
+            <span class="footer__heading">NAVIGATION</span>
+            <a href="#investors" data-page="investors">Investors</a>
+            <a href="#careers" data-page="careers">Careers</a>
+            <a href="#services" data-page="services">Services</a>
+          </div>
+          <div class="footer__nav-col">
+            <span class="footer__heading">ENGAGEMENT</span>
+            <a href="#" data-open-modal="contact" data-prefill="investor">Investor Data Room</a>
+            <a href="#" data-open-modal="contact" data-prefill="careers">Founding Team</a>
+            <a href="#" data-open-modal="contact" data-prefill="services">R&D Partnership</a>
+          </div>
+          <div class="footer__nav-col">
+            <span class="footer__heading">CONNECT</span>
+            <a href="#" data-open-modal="contact">Contact Thenine</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 THENINE LLP. ALL RIGHTS RESERVED.</span>
+        <span>PRE-SEED ROBOTICS COMPANY</span>
+        <span>PROPRIETARY & CONFIDENTIAL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── CONTACT & INQUIRY MODAL ───────────────────── -->
+  <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display:none;">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__content">
+      <button class="modal__close" data-close-modal aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="section-label" style="margin-bottom: 8px;">// DIRECT COMMUNICATION</div>
+      <h2 id="modal-title" class="modal__title">Contact Thenine</h2>
+      <p class="modal__subtitle">Direct communication with our founding robotics engineering team.</p>
+
+      <form id="contact-form" class="modal__form">
+        <div class="form-group">
+          <label for="contact-name">FULL NAME</label>
+          <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Dr. Alex Vance" />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">EMAIL ADDRESS</label>
+          <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="alex@domain.com" />
+        </div>
+        <div class="form-group">
+          <label for="contact-company">COMPANY / INSTITUTION</label>
+          <input type="text" id="contact-company" name="company" placeholder="Entity or Firm" />
+        </div>
+        <div class="form-group">
+          <label for="contact-type">I'M CONTACTING THENINE ABOUT:</label>
+          <select id="contact-type" name="type" required>
+            <option value="">Select option...</option>
+            <option value="investor">Investment & SAFE Round</option>
+            <option value="careers">Careers & Founding Team</option>
+            <option value="services">Robotics R&D Project</option>
+            <option value="partnership">Partnership</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">MESSAGE</label>
+          <textarea id="contact-message" name="message" rows="4" required placeholder="Specify your kinematics, perception, project or inquiry details..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
+          <span>Send Message</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
