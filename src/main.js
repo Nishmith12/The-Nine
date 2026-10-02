@@ -496,8 +496,11 @@ function openContactModal(prefillType, prefillRole) {
   const modal = document.getElementById('contact-modal');
   if (!modal) return;
 
-  modal.style.display = 'flex';
+  if (lenis) {
+    lenis.stop();
+  }
   document.body.style.overflow = 'hidden';
+  modal.style.display = 'flex';
 
   const modalContent = modal.querySelector('.modal__content');
   if (modalContent) {
@@ -538,12 +541,19 @@ function closeContactModal() {
   if (modal) {
     modal.style.display = 'none';
     document.body.style.overflow = '';
+    if (lenis) {
+      lenis.start();
+    }
   }
 }
 
 function initContactModal() {
   const modal = document.getElementById('contact-modal');
   if (!modal) return;
+
+  modal.addEventListener('wheel', (e) => {
+    e.stopPropagation();
+  }, { passive: true });
 
   document.querySelectorAll('[data-close-modal]').forEach((el) => {
     el.addEventListener('click', closeContactModal);

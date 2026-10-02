@@ -1568,7 +1568,7 @@ html.lenis, html.lenis body {
   color: var(--text-muted);
 }
 
-/* ─── Contact Modal ──────────────────────────────────── */
+/* ─── Contact Modal (Landscape Architecture) ─────────── */
 .modal {
   position: fixed;
   inset: 0;
@@ -1576,7 +1576,7 @@ html.lenis, html.lenis body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px;
+  padding: 24px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -1594,12 +1594,12 @@ html.lenis, html.lenis body {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-blue);
   border-radius: var(--radius-lg);
-  padding: 32px 36px 36px;
-  max-width: 540px;
+  padding: 32px 36px 34px;
+  max-width: 960px;
   width: 100%;
   max-height: calc(100vh - 48px);
   overflow-y: auto;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), var(--shadow-blue-glow);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.85), var(--shadow-blue-glow);
   z-index: 2;
   margin: auto;
 }
@@ -1623,6 +1623,48 @@ html.lenis, html.lenis body {
   background: rgba(29, 111, 255, 0.7);
 }
 
+.modal__landscape-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.modal__col-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modal__trust-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+.modal__col-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 .modal__close {
   position: absolute;
   top: 18px;
@@ -1634,6 +1676,7 @@ html.lenis, html.lenis body {
   padding: 6px;
   border-radius: var(--radius-xs);
   transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 5;
 }
 
 .modal__close:hover {
@@ -1643,34 +1686,34 @@ html.lenis, html.lenis body {
 
 .modal__title {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--text-white);
   margin-bottom: 6px;
+  letter-spacing: -0.02em;
 }
 
 .modal__subtitle {
   font-size: 0.88rem;
   color: var(--text-secondary);
-  margin-bottom: 16px;
   line-height: 1.45;
 }
 
 .modal__form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .form-group label {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   letter-spacing: 0.12em;
   color: var(--text-muted);
 }
@@ -1681,17 +1724,18 @@ html.lenis, html.lenis body {
   background: rgba(5, 7, 11, 0.8);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 10px 14px;
+  padding: 9px 13px;
   color: var(--text-white);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   outline: none;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
 }
 
 .form-group textarea {
-  min-height: 70px;
-  max-height: 130px;
+  min-height: 64px;
+  max-height: 110px;
   resize: vertical;
 }
 
@@ -1700,6 +1744,23 @@ html.lenis, html.lenis body {
 .form-group textarea:focus {
   border-color: var(--blue-electric);
   box-shadow: 0 0 16px rgba(29, 111, 255, 0.3);
+}
+
+@media (max-width: 860px) {
+  .modal__landscape-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .modal__content {
+    max-width: 520px;
+    padding: 26px 20px;
+  }
+  .modal__form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .modal__trust-list {
+    display: none;
+  }
 }
 
 /* ─── Responsive Media Queries ───────────────────────── */
