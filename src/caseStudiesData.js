@@ -85,5 +85,5 @@ export const COMPANY_METRICS = {
   ipsFiled: '6+',
   teamMembers: '6',
   researchArticles: '2+',
-  contactEmail: 'thenine.enquiry@gmail.com',
+  contactEmail: 'info@thenine.co.in',
 };

@@ -85,7 +85,7 @@ export function renderInvestorsPage() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <div class="metric-pill__info">
               <span class="metric-pill__label">Official Contact</span>
-              <a href="mailto:thenine.enquiry@gmail.com" class="metric-pill__link">thenine.enquiry@gmail.com</a>
+              <a href="mailto:info@thenine.co.in" class="metric-pill__link">info@thenine.co.in</a>
             </div>
           </div>
         </div>
@@ -506,7 +506,7 @@ export function renderInvestorsPage() {
             </div>
             <div class="fundraise-stat-item">
               <span class="stat-key">DIRECT INQUIRIES</span>
-              <span class="stat-val" style="font-size: 0.95rem; word-break: break-all;">thenine.enquiry@gmail.com</span>
+              <span class="stat-val" style="font-size: 0.95rem; word-break: break-all;">info@thenine.co.in</span>
             </div>
           </div>
 
@@ -525,8 +525,8 @@ export function renderInvestorsPage() {
                 <span>Request Investor Briefing</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
-              <a href="mailto:thenine.enquiry@gmail.com?subject=THENINE%20Investor%20Inquiry" class="btn btn--secondary btn--full" style="text-align: center; justify-content: center;">
-                <span>Email Founders: thenine.enquiry@gmail.com</span>
+              <a href="mailto:info@thenine.co.in?subject=THENINE%20Investor%20Inquiry" class="btn btn--secondary btn--full" style="text-align: center; justify-content: center;">
+                <span>Email Founders: info@thenine.co.in</span>
               </a>
             </div>
           </div>
@@ -550,8 +550,8 @@ export function renderInvestorsPage() {
             <span>Contact Thenine</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
-          <a href="mailto:thenine.enquiry@gmail.com" class="btn btn--secondary btn--large">
-            <span>thenine.enquiry@gmail.com</span>
+          <a href="mailto:info@thenine.co.in" class="btn btn--secondary btn--large">
+            <span>info@thenine.co.in</span>
           </a>
         </div>
       </div>
@@ -788,7 +788,7 @@ export function renderCareersPage() {
         <div class="section-label">// APPLICATION</div>
         <h2 class="cta-headline">&ldquo;Help build the machine.&rdquo;</h2>
         <p class="cta-subtext">
-          Send your portfolio, GitHub, or videos of what you've physically built directly to our engineering team at <a href="mailto:thenine.enquiry@gmail.com" style="color: var(--blue-accent);">thenine.enquiry@gmail.com</a>.
+          Send your portfolio, GitHub, or videos of what you've physically built directly to our engineering team at <a href="mailto:info@thenine.co.in" style="color: var(--blue-accent);">info@thenine.co.in</a>.
         </p>
         <button class="btn btn--primary btn--large" data-open-modal="contact" data-prefill="careers">
           <span>Apply to Thenine</span>
@@ -840,7 +840,7 @@ export function renderServicesPage() {
           </div>
           <div class="hero__meta-col">
             <span class="meta-label">DIRECT EMAIL</span>
-            <span class="meta-value">thenine.enquiry@gmail.com</span>
+            <span class="meta-value">info@thenine.co.in</span>
           </div>
         </div>
       </div>
@@ -1198,7 +1198,7 @@ export function renderServicesPage() {
           &ldquo;Have the idea.<br>Need the machine?&rdquo;
         </h2>
         <p class="cta-subtext">
-          Tell us what you're trying to build. Reach our engineering team at <a href="mailto:thenine.enquiry@gmail.com" style="color: var(--blue-accent);">thenine.enquiry@gmail.com</a>.
+          Tell us what you're trying to build. Reach our engineering team at <a href="mailto:info@thenine.co.in" style="color: var(--blue-accent);">info@thenine.co.in</a>.
         </p>
         <button class="btn btn--primary btn--large" data-open-modal="contact" data-prefill="services">
           <span>Start a conversation</span>

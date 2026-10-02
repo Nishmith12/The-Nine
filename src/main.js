@@ -552,7 +552,7 @@ function initContactModal() {
   const copyBtn = document.getElementById('copy-email-btn');
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      const email = 'thenine.enquiry@gmail.com';
+      const email = 'info@thenine.co.in';
       navigator.clipboard.writeText(email).then(() => {
         const textSpan = document.getElementById('copy-email-text');
         if (textSpan) {
@@ -588,7 +588,7 @@ function initContactModal() {
       btn.disabled = true;
       btn.innerHTML = `
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin"><circle cx="12" cy="12" r="10" opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
-        Transmitting to thenine.enquiry@gmail.com...
+        Transmitting to info@thenine.co.in...
       `;
 
       // Open mailto as well for reliability
@@ -604,7 +604,7 @@ function initContactModal() {
 
         // Trigger mail client as fallback so user copy is in their outbox
         const mailtoLink = document.createElement('a');
-        mailtoLink.href = `mailto:thenine.enquiry@gmail.com?subject=${subject}&body=${body}`;
+        mailtoLink.href = `mailto:info@thenine.co.in?subject=${subject}&body=${body}`;
         mailtoLink.click();
 
         setTimeout(() => {
