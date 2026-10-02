@@ -499,6 +499,11 @@ function openContactModal(prefillType, prefillRole) {
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 
+  const modalContent = modal.querySelector('.modal__content');
+  if (modalContent) {
+    modalContent.scrollTop = 0;
+  }
+
   const typeSelect = document.getElementById('contact-type');
   const msgInput = document.getElementById('contact-message');
 

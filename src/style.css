@@ -1576,11 +1576,13 @@ html.lenis, html.lenis body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 24px 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal__backdrop {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(5, 7, 11, 0.88);
   backdrop-filter: blur(16px);
@@ -1592,59 +1594,83 @@ html.lenis, html.lenis body {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-blue);
   border-radius: var(--radius-lg);
-  padding: 44px;
+  padding: 32px 36px 36px;
   max-width: 540px;
   width: 100%;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), var(--shadow-blue-glow);
   z-index: 2;
+  margin: auto;
+}
+
+/* Custom sleek scrollbar for modal */
+.modal__content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal__content::-webkit-scrollbar-track {
+  background: rgba(5, 7, 11, 0.4);
+  border-radius: 4px;
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+  background: rgba(29, 111, 255, 0.35);
+  border-radius: 4px;
+}
+
+.modal__content::-webkit-scrollbar-thumb:hover {
+  background: rgba(29, 111, 255, 0.7);
 }
 
 .modal__close {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 18px;
+  right: 18px;
   background: transparent;
   border: none;
   color: var(--text-secondary);
   cursor: pointer;
   padding: 6px;
   border-radius: var(--radius-xs);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .modal__close:hover {
   color: var(--text-white);
+  transform: scale(1.1);
 }
 
 .modal__title {
   font-family: var(--font-display);
-  font-size: 1.85rem;
+  font-size: 1.65rem;
   font-weight: 600;
   color: var(--text-white);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .modal__subtitle {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+  line-height: 1.45;
 }
 
 .modal__form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .form-group label {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.12em;
   color: var(--text-muted);
 }
@@ -1655,12 +1681,18 @@ html.lenis, html.lenis body {
   background: rgba(5, 7, 11, 0.8);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
+  padding: 10px 14px;
   color: var(--text-white);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   outline: none;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-group textarea {
+  min-height: 70px;
+  max-height: 130px;
+  resize: vertical;
 }
 
 .form-group input:focus,
@@ -2340,8 +2372,8 @@ html.lenis, html.lenis body {
   background: rgba(5, 7, 11, 0.6);
   border: 1px solid var(--border-blue);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  margin-bottom: 24px;
+  padding: 9px 14px;
+  margin-bottom: 16px;
   gap: 12px;
 }
 
