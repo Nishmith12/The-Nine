@@ -11,7 +11,7 @@ export function renderInvestorsPage() {
     <!-- Investors Hero -->
     <section class="page-hero" id="investors-hero">
       <div class="hero__content">
-        <div class="section-label">THENINE // PROPRIETARY TECHNOLOGY PLATFORM</div>
+        <div class="section-label">PROPRIETARY TECHNOLOGY PLATFORM</div>
         <div class="hero__headline-container">
           <div class="hero__line-mask">
             <h1 class="hero__line">Robots built for</h1>
@@ -21,7 +21,7 @@ export function renderInvestorsPage() {
           </div>
         </div>
         <p class="hero__description">
-          THENINE is building a portfolio of proprietary technologies under one technology platform — led by our core Agri-Robotics business, with additional patent-backed projects progressing toward commercialization and investment.
+          THENINE is building a portfolio of proprietary technologies under one technology platform, led by our core Agri-Robotics business, with additional patent-backed projects progressing toward commercialization and investment.
         </p>
         <div class="hero__actions">
           <a href="#opportunities" class="btn btn--primary">
@@ -96,24 +96,24 @@ export function renderInvestorsPage() {
     <section class="investors-opportunities-section" id="opportunities">
       <div class="container">
         <div class="section-intro">
-          <div class="section-label">// INVESTMENT OPPORTUNITIES</div>
+          <div class="section-label">INVESTMENT OPPORTUNITIES</div>
           <h2 class="section-headline reveal-heading">Proprietary technologies under one platform.</h2>
           <p class="section-lead reveal-body">
-            THENINE is building a portfolio of proprietary technologies under one technology platform — led by our core Agri-Robotics business, with additional patent-backed projects progressing toward commercialization and investment.
+            THENINE is building a portfolio of proprietary technologies under one technology platform, led by our core Agri-Robotics business, with additional patent-backed projects progressing toward commercialization and investment.
           </p>
         </div>
 
         <div class="opportunities-grid">
 
-          <!-- 01 — CORE BUSINESS (Flagship Spotlight) -->
+          <!-- 01: CORE BUSINESS (Flagship Spotlight) -->
           <article class="opportunity-card opportunity-card--featured reveal-card">
             <div class="opp-card__glow-border"></div>
             <div class="opp-card__header">
               <div class="opp-card__index-wrap">
-                <span class="opp-card__index">01 — CORE BUSINESS</span>
+                <span class="opp-card__index">01: CORE BUSINESS</span>
                 <span class="opp-badge opp-badge--core">
                   <span class="pulse-dot pulse-dot--green"></span>
-                  CORE BUSINESS — IN DEVELOPMENT
+                  CORE BUSINESS: IN DEVELOPMENT
                 </span>
               </div>
               <span class="opp-card__tag">FLAGSHIP COMMERCIAL PLATFORM</span>
@@ -181,11 +181,11 @@ export function renderInvestorsPage() {
             </div>
           </article>
 
-          <!-- 02 — PATENT TECHNOLOGY: Easy Fix Modular Socket -->
+          <!-- 02: PATENT TECHNOLOGY: Easy Fix Modular Socket -->
           <article class="opportunity-card reveal-card">
             <div class="opp-card__header">
               <div class="opp-card__index-wrap">
-                <span class="opp-card__index">02 — PATENT TECHNOLOGY</span>
+                <span class="opp-card__index">02: PATENT TECHNOLOGY</span>
                 <span class="opp-badge opp-badge--patent">
                   <span class="pulse-dot pulse-dot--amber"></span>
                   R&D / PROTOTYPE
@@ -232,11 +232,11 @@ export function renderInvestorsPage() {
             </div>
           </article>
 
-          <!-- 03 — PATENT TECHNOLOGY: Ultra-Low-Head Energy System -->
+          <!-- 03: PATENT TECHNOLOGY: Ultra-Low-Head Energy System -->
           <article class="opportunity-card reveal-card">
             <div class="opp-card__header">
               <div class="opp-card__index-wrap">
-                <span class="opp-card__index">03 — PATENT TECHNOLOGY</span>
+                <span class="opp-card__index">03: PATENT TECHNOLOGY</span>
                 <span class="opp-badge opp-badge--patent">
                   <span class="pulse-dot pulse-dot--cyan"></span>
                   PROTOTYPE
@@ -290,7 +290,7 @@ export function renderInvestorsPage() {
     <!-- 02 / THESIS SECTION -->
     <section class="investors-thesis-section" id="thesis">
       <div class="container">
-        <div class="section-label">02 // THESIS</div>
+        <div class="section-label">02. THESIS</div>
         <div class="thesis-callout reveal-card">
           <h2 class="thesis-statement">
             &ldquo;Fixed automation works when the world is predictable.<br>
@@ -298,7 +298,7 @@ export function renderInvestorsPage() {
           </h2>
           <div class="thesis-body">
             <p>
-              Traditional industrial automation requires hyper-controlled environments where every component arrives at an exact coordinate under sterile lighting. High-value agricultural tasks — such as arecanut harvesting and tree operations — feature high biological entropy, variable heights, and unpredictable weather.
+              Traditional industrial automation requires hyper-controlled environments where every component arrives at an exact coordinate under sterile lighting. High-value agricultural tasks, such as arecanut harvesting and tree operations, feature high biological entropy, variable heights, and unpredictable weather.
             </p>
             <p style="margin-top: 16px;">
               THENINE solves this through a unified physical platform: adaptive perception, resilient mechanical mechanisms, and field-tested hardware. Concurrently, our engineering pipeline incubates patent-protected hardware innovations that address systemic infrastructure needs.
@@ -319,10 +319,10 @@ export function renderInvestorsPage() {
     <section class="investors-team-section" id="team">
       <div class="container">
         <div class="section-intro">
-          <div class="section-label">03 // FOUNDING LEADERSHIP &amp; TEAM</div>
+          <div class="section-label">03. FOUNDING LEADERSHIP &amp; TEAM</div>
           <h2 class="section-headline reveal-heading">Leadership with conviction in deep-tech execution.</h2>
           <p class="section-lead reveal-body">
-            Meet the founders leading THENINE — backed by a tight-knit squad of 6 multidisciplinary engineers and researchers, 6+ filed patents, and 2+ peer-reviewed research publications.
+            Meet the founders leading THENINE, backed by a tight-knit squad of 6 multidisciplinary engineers and researchers, 6+ filed patents, and 2+ peer-reviewed research publications.
           </p>
         </div>
 
@@ -332,7 +332,7 @@ export function renderInvestorsPage() {
           <article class="founder-card reveal-card">
             <div class="founder-card__profile">
               <div class="founder-img-wrap">
-                <img src="./shravan-kumar.jpg" alt="Mr. Shravan Kumar — Founder & CEO" class="founder-img" />
+                <img src="./shravan-kumar.jpg" alt="Mr. Shravan Kumar, Founder & CEO" class="founder-img" />
               </div>
               <div class="founder-card__titles">
                 <span class="founder-role-badge">FOUNDER &amp; CEO</span>
@@ -357,7 +357,7 @@ export function renderInvestorsPage() {
           <article class="founder-card reveal-card">
             <div class="founder-card__profile">
               <div class="founder-img-wrap">
-                <img src="./ganesh-kumar.jpg" alt="Mr. Ganesh Kumar — Co-founder & CFO" class="founder-img" />
+                <img src="./ganesh-kumar.jpg" alt="Mr. Ganesh Kumar, Co-founder & CFO" class="founder-img" />
               </div>
               <div class="founder-card__titles">
                 <span class="founder-role-badge">CO-FOUNDER &amp; CFO</span>
@@ -381,12 +381,12 @@ export function renderInvestorsPage() {
 
         <!-- 6-Member Multidisciplinary Engineering Pillars -->
         <div style="margin-top: 40px; margin-bottom: 24px;">
-          <div class="section-label" style="margin-bottom: 8px;">// TECHNICAL EXECUTION SQUAD</div>
+          <div class="section-label" style="margin-bottom: 8px;">TECHNICAL EXECUTION SQUAD</div>
           <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--text-white);" class="reveal-heading">
             6 Team Members Driving End-to-End Robotics &amp; Patented R&amp;D
           </h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 6px;">
-            A multidisciplinary team combining mechanical precision, real-time control, perception, and patent prosecution — with 6+ IPs filed and 2+ research articles published.
+            A multidisciplinary team combining mechanical precision, real-time control, perception, and patent prosecution, with 6+ IPs filed and 2+ research articles published.
           </p>
         </div>
 
@@ -481,7 +481,7 @@ export function renderInvestorsPage() {
     <!-- 04 / SAFE FUNDRAISE SECTION -->
     <section class="investors-fundraise-section" id="fundraise">
       <div class="container">
-        <div class="section-label">04 // FUNDRAISE</div>
+        <div class="section-label">04. FUNDRAISE</div>
         <div class="fundraise-panel reveal-card">
           <div class="fundraise-stats">
             <div>
@@ -538,7 +538,7 @@ export function renderInvestorsPage() {
     <section class="cinematic-cta-section">
       <div class="cta-radial-glow"></div>
       <div class="container cta-container">
-        <div class="section-label">// CONNECT WITH FOUNDERS</div>
+        <div class="section-label">CONNECT WITH FOUNDERS</div>
         <h2 class="cta-headline">
           &ldquo;Partner with THENINE on the next frontier of real-world robotics &amp; clean innovation.&rdquo;
         </h2>
@@ -565,7 +565,7 @@ export function renderCareersPage() {
     <!-- Careers Hero -->
     <section class="page-hero" id="careers-hero">
       <div class="hero__content">
-        <div class="section-label">JOIN THENINE // 6-MEMBER FOUNDING TEAM</div>
+        <div class="section-label">JOIN THENINE: 6-MEMBER FOUNDING TEAM</div>
         <div class="hero__headline-container">
           <div class="hero__line-mask">
             <h1 class="hero__line">Build the machine</h1>
@@ -661,7 +661,7 @@ export function renderCareersPage() {
           <!-- Role 01 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 01 // MECHATRONICS</span>
+              <span class="role-number">ROLE 01: MECHATRONICS</span>
               <h3 class="role-name">Robotics Systems Engineer</h3>
             </div>
             <div>
@@ -685,7 +685,7 @@ export function renderCareersPage() {
           <!-- Role 02 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 02 // EMBEDDED</span>
+              <span class="role-number">ROLE 02: EMBEDDED</span>
               <h3 class="role-name">Firmware & Motor Control Engineer</h3>
             </div>
             <div>
@@ -709,7 +709,7 @@ export function renderCareersPage() {
           <!-- Role 03 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 03 // VISION & AI</span>
+              <span class="role-number">ROLE 03: VISION & AI</span>
               <h3 class="role-name">Computer Vision Engineer</h3>
             </div>
             <div>
@@ -733,7 +733,7 @@ export function renderCareersPage() {
           <!-- Role 04 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 04 // MECHANICAL</span>
+              <span class="role-number">ROLE 04: MECHANICAL</span>
               <h3 class="role-name">Mechanical Design Engineer</h3>
             </div>
             <div>
@@ -757,7 +757,7 @@ export function renderCareersPage() {
           <!-- Role 05 -->
           <div class="role-row-card reveal-card">
             <div class="role-col-title">
-              <span class="role-number">ROLE 05 // CLEAN-TECH</span>
+              <span class="role-number">ROLE 05: CLEAN-TECH</span>
               <h3 class="role-name">Hydro-Kinetic Systems Engineer</h3>
             </div>
             <div>
@@ -785,7 +785,7 @@ export function renderCareersPage() {
     <section class="cinematic-cta-section">
       <div class="cta-radial-glow"></div>
       <div class="container cta-container">
-        <div class="section-label">// APPLICATION</div>
+        <div class="section-label">APPLICATION</div>
         <h2 class="cta-headline">&ldquo;Help build the machine.&rdquo;</h2>
         <p class="cta-subtext">
           Send your portfolio, GitHub, or videos of what you've physically built directly to our engineering team at <a href="mailto:info@thenine.co.in" style="color: var(--blue-accent);">info@thenine.co.in</a>.
@@ -805,7 +805,7 @@ export function renderServicesPage() {
     <!-- Services Hero -->
     <section class="page-hero" id="services-hero">
       <div class="hero__content">
-        <div class="section-label">THENINE R&D // 6+ IPs FILED</div>
+        <div class="section-label">THENINE R&D: 6+ IPs FILED</div>
         <div class="hero__headline-container">
           <div class="hero__line-mask">
             <h1 class="hero__line">From robotics idea</h1>
@@ -855,7 +855,7 @@ export function renderServicesPage() {
       <div class="container">
         
         <div class="section-intro">
-          <div class="section-label">PROCESS // END-TO-END R&D</div>
+          <div class="section-label">PROCESS: END-TO-END R&D</div>
           <h2 class="section-headline reveal-heading">The 4-Stage Lifecycle</h2>
           <p class="section-lead reveal-body">
             From initial physics & feasibility to custom hardware engineering, empirical field testing, and defensible IP protection.
@@ -890,7 +890,7 @@ export function renderServicesPage() {
             <div class="hud-top">
               <div class="hud-badge-wrap">
                 <span class="pulse-dot pulse-dot--cyan"></span>
-                <span class="hud-badge" id="service-hud-badge">01 // IDEA & FEASIBILITY</span>
+                <span class="hud-badge" id="service-hud-badge">01. IDEA & FEASIBILITY</span>
               </div>
               <span class="hud-coord" id="service-hud-coord">SYS_VEC: [1.88, 0.42, -0.15]</span>
             </div>
@@ -918,7 +918,7 @@ export function renderServicesPage() {
               </div>
               <div class="hud-metric">
                 <span class="metric-label">CYCLE DURATION</span>
-                <span class="metric-val" id="hud-metric-timeline">2 – 4 Weeks</span>
+                <span class="metric-val" id="hud-metric-timeline">2 to 4 Weeks</span>
               </div>
               <div class="hud-metric">
                 <span class="metric-label">PRIMARY FOCUS</span>
@@ -1114,7 +1114,7 @@ export function renderServicesPage() {
 
         <div class="audience-grid">
           <div class="audience-card reveal-card">
-            <span class="audience-number">AUDIENCE 01 //</span>
+            <span class="audience-number">AUDIENCE 01</span>
             <h4 class="audience-title">Agricultural & Industrial Operators</h4>
             <p class="audience-desc">
               "You operate commercial agricultural or industrial operations needing custom automated physical machines to solve labor and safety challenges."
@@ -1122,7 +1122,7 @@ export function renderServicesPage() {
           </div>
 
           <div class="audience-card reveal-card">
-            <span class="audience-number">AUDIENCE 02 //</span>
+            <span class="audience-number">AUDIENCE 02</span>
             <h4 class="audience-title">Pre-Seed Hardware Startups</h4>
             <p class="audience-desc">
               "You need a credible, working physical prototype to prove feasibility to investors and enterprise customers before raising your next round."
@@ -1130,7 +1130,7 @@ export function renderServicesPage() {
           </div>
 
           <div class="audience-card reveal-card">
-            <span class="audience-number">AUDIENCE 03 //</span>
+            <span class="audience-number">AUDIENCE 03</span>
             <h4 class="audience-title">Teams Protecting Technical IP</h4>
             <p class="audience-desc">
               "You want to validate, prototype, and rigorously document technical inventions before broadly pitching or scaling commercial development."
@@ -1153,7 +1153,7 @@ export function renderServicesPage() {
 
         <div class="models-grid">
           <div class="model-card reveal-card">
-            <span class="model-option-tag">OPTION 01 // DEFINED MILESTONE</span>
+            <span class="model-option-tag">OPTION 01: DEFINED MILESTONE</span>
             <h3 class="model-title">Fixed-Scope Project</h3>
             <p class="model-desc">
               Ideal for a clearly defined prototype, specific technical milestone, feasibility study, or functional proof-of-concept. Scope, deliverables, and project milestones are defined upfront.
@@ -1170,7 +1170,7 @@ export function renderServicesPage() {
           </div>
 
           <div class="model-card reveal-card">
-            <span class="model-option-tag">OPTION 02 // EMBEDDED TEAM</span>
+            <span class="model-option-tag">OPTION 02: EMBEDDED TEAM</span>
             <h3 class="model-title">Ongoing R&D Partner</h3>
             <p class="model-desc">
               Best for longer development cycles, repeated experimentation, evolving requirements, and startups without an internal robotics team. Thenine operates as your extended technical R&D lab.
@@ -1193,7 +1193,7 @@ export function renderServicesPage() {
     <section class="cinematic-cta-section">
       <div class="cta-radial-glow"></div>
       <div class="container cta-container">
-        <div class="section-label">// GET STARTED</div>
+        <div class="section-label">GET STARTED</div>
         <h2 class="cta-headline">
           &ldquo;Have the idea.<br>Need the machine?&rdquo;
         </h2>

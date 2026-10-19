@@ -7,7 +7,7 @@ export const TECHNOLOGIES = [
   {
     id: 'arecanut-robotics',
     number: '01',
-    category: 'CORE BUSINESS — IN DEVELOPMENT',
+    category: 'CORE BUSINESS: IN DEVELOPMENT',
     title: 'Autonomous Arecanut Robotics Platform',
     badge: 'CORE BUSINESS',
     badgeClass: 'core',
